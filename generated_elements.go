@@ -1566,17 +1566,17 @@ func Section(children ...Node) Node {
 	return El("section", children...)
 }
 
-// Select defines a drop-down list.
+// SelectEl defines a drop-down list.
 //
-//	func ExampleSelect() {
-//		node := nodx.Select(
+//	func ExampleSelectEl() {
+//		node := nodx.SelectEl(
 //			nodx.Id("1"),
 //			nodx.Text("Hello World!"),
 //		)
 //		fmt.Println(node)
 //		// Output: <select id="1">Hello World!</select>
 //	}
-func Select(children ...Node) Node {
+func SelectEl(children ...Node) Node {
 	return El("select", children...)
 }
 
@@ -1970,17 +1970,17 @@ func Ul(children ...Node) Node {
 	return El("ul", children...)
 }
 
-// Var defines a variable.
+// VarEl defines a variable.
 //
-//	func ExampleVar() {
-//		node := nodx.Var(
+//	func ExampleVarEl() {
+//		node := nodx.VarEl(
 //			nodx.Id("1"),
 //			nodx.Text("Hello World!"),
 //		)
 //		fmt.Println(node)
 //		// Output: <var id="1">Hello World!</var>
 //	}
-func Var(children ...Node) Node {
+func VarEl(children ...Node) Node {
 	return El("var", children...)
 }
 

@@ -82,12 +82,12 @@ func Allow(value string) Node {
 // Allowfullscreen specifies that an iframe can be displayed in fullscreen mode.
 //
 //	func ExampleAllowfullscreen() {
-//		node := nodx.Allowfullscreen("value")
+//		node := nodx.Allowfullscreen(true)
 //		fmt.Println(node)
-//		// Output: allowfullscreen="value"
+//		// Output: allowfullscreen
 //	}
-func Allowfullscreen(value string) Node {
-	return Attr("allowfullscreen", value)
+func Allowfullscreen(value bool) Node {
+	return AttrBool("allowfullscreen", value)
 }
 
 // Alt provides alternative text for an image if it cannot be displayed.
@@ -137,12 +137,12 @@ func As(value string) Node {
 // Async indicates that the script should be executed asynchronously.
 //
 //	func ExampleAsync() {
-//		node := nodx.Async("value")
+//		node := nodx.Async(true)
 //		fmt.Println(node)
-//		// Output: async="value"
+//		// Output: async
 //	}
-func Async(value string) Node {
-	return Attr("async", value)
+func Async(value bool) Node {
+	return AttrBool("async", value)
 }
 
 // Autocapitalize controls how text input is automatically capitalized.
@@ -181,23 +181,23 @@ func Autocorrect(value string) Node {
 // Autofocus specifies that an input field should automatically get focus when the page loads.
 //
 //	func ExampleAutofocus() {
-//		node := nodx.Autofocus("value")
+//		node := nodx.Autofocus(true)
 //		fmt.Println(node)
-//		// Output: autofocus="value"
+//		// Output: autofocus
 //	}
-func Autofocus(value string) Node {
-	return Attr("autofocus", value)
+func Autofocus(value bool) Node {
+	return AttrBool("autofocus", value)
 }
 
 // Autoplay specifies that the audio/video should start playing as soon as it is ready.
 //
 //	func ExampleAutoplay() {
-//		node := nodx.Autoplay("value")
+//		node := nodx.Autoplay(true)
 //		fmt.Println(node)
-//		// Output: autoplay="value"
+//		// Output: autoplay
 //	}
-func Autoplay(value string) Node {
-	return Attr("autoplay", value)
+func Autoplay(value bool) Node {
+	return AttrBool("autoplay", value)
 }
 
 // Autosave specifies that an input should be pre-filled with previous values (deprecated).
@@ -357,12 +357,12 @@ func Charset(value string) Node {
 // Checked specifies that an input element should be pre-selected when the page loads.
 //
 //	func ExampleChecked() {
-//		node := nodx.Checked("value")
+//		node := nodx.Checked(true)
 //		fmt.Println(node)
-//		// Output: checked="value"
+//		// Output: checked
 //	}
-func Checked(value string) Node {
-	return Attr("checked", value)
+func Checked(value bool) Node {
+	return AttrBool("checked", value)
 }
 
 // CiteAttr specifies a URL that explains the quote, or why a text was inserted/deleted.
@@ -522,12 +522,12 @@ func Contextmenu(value string) Node {
 // Controls specifies that audio/video controls should be displayed.
 //
 //	func ExampleControls() {
-//		node := nodx.Controls("value")
+//		node := nodx.Controls(true)
 //		fmt.Println(node)
-//		// Output: controls="value"
+//		// Output: controls
 //	}
-func Controls(value string) Node {
-	return Attr("controls", value)
+func Controls(value bool) Node {
+	return AttrBool("controls", value)
 }
 
 // Coords specifies the coordinates of an area in an image-map.
@@ -618,26 +618,26 @@ func Decoding(value string) Node {
 	return Attr("decoding", value)
 }
 
-// Default specifies the default track kind.
+// DefaultAttr specifies the default track kind.
 //
-//	func ExampleDefault() {
-//		node := nodx.Default("value")
+//	func ExampleDefaultAttr() {
+//		node := nodx.DefaultAttr(true)
 //		fmt.Println(node)
-//		// Output: default="value"
+//		// Output: default
 //	}
-func Default(value string) Node {
-	return Attr("default", value)
+func DefaultAttr(value bool) Node {
+	return AttrBool("default", value)
 }
 
-// Defer specifies that the script is executed when the page has finished parsing.
+// DeferAttr specifies that the script is executed when the page has finished parsing.
 //
-//	func ExampleDefer() {
-//		node := nodx.Defer("value")
+//	func ExampleDeferAttr() {
+//		node := nodx.DeferAttr(true)
 //		fmt.Println(node)
-//		// Output: defer="value"
+//		// Output: defer
 //	}
-func Defer(value string) Node {
-	return Attr("defer", value)
+func DeferAttr(value bool) Node {
+	return AttrBool("defer", value)
 }
 
 // DirAttr specifies the text direction for the content.
@@ -665,12 +665,12 @@ func Dirname(value string) Node {
 // Disabled specifies that an element should be disabled.
 //
 //	func ExampleDisabled() {
-//		node := nodx.Disabled("value")
+//		node := nodx.Disabled(true)
 //		fmt.Println(node)
-//		// Output: disabled="value"
+//		// Output: disabled
 //	}
-func Disabled(value string) Node {
-	return Attr("disabled", value)
+func Disabled(value bool) Node {
+	return AttrBool("disabled", value)
 }
 
 // Download specifies that the target will be downloaded when a user clicks on the hyperlink.
@@ -761,14 +761,14 @@ func Fetchpriority(value string) Node {
 	return Attr("fetchpriority", value)
 }
 
-// For specifies which form element a label or output element is bound to.
+// ForAttr specifies which form element a label or output element is bound to.
 //
-//	func ExampleFor() {
-//		node := nodx.For("value")
+//	func ExampleForAttr() {
+//		node := nodx.ForAttr("value")
 //		fmt.Println(node)
 //		// Output: for="value"
 //	}
-func For(value string) Node {
+func ForAttr(value string) Node {
 	return Attr("for", value)
 }
 
@@ -819,12 +819,12 @@ func Formmethod(value string) Node {
 // Formnovalidate defines that form elements should not be validated when submitted.
 //
 //	func ExampleFormnovalidate() {
-//		node := nodx.Formnovalidate("value")
+//		node := nodx.Formnovalidate(true)
 //		fmt.Println(node)
-//		// Output: formnovalidate="value"
+//		// Output: formnovalidate
 //	}
-func Formnovalidate(value string) Node {
-	return Attr("formnovalidate", value)
+func Formnovalidate(value bool) Node {
+	return AttrBool("formnovalidate", value)
 }
 
 // Formtarget specifies where to display the response after submitting the form.
@@ -1006,12 +1006,12 @@ func Importance(value string) Node {
 // Inert makes an element and its children unresponsive to user input.
 //
 //	func ExampleInert() {
-//		node := nodx.Inert("value")
+//		node := nodx.Inert(true)
 //		fmt.Println(node)
-//		// Output: inert="value"
+//		// Output: inert
 //	}
-func Inert(value string) Node {
-	return Attr("inert", value)
+func Inert(value bool) Node {
+	return AttrBool("inert", value)
 }
 
 // Inputmode hints the type of virtual keyboard to use for a form field.
@@ -1039,12 +1039,12 @@ func Integrity(value string) Node {
 // Ismap specifies an image as a server-side image-map.
 //
 //	func ExampleIsmap() {
-//		node := nodx.Ismap("value")
+//		node := nodx.Ismap(true)
 //		fmt.Println(node)
-//		// Output: ismap="value"
+//		// Output: ismap
 //	}
-func Ismap(value string) Node {
-	return Attr("ismap", value)
+func Ismap(value bool) Node {
+	return AttrBool("ismap", value)
 }
 
 // Itemid specifies a global identifier for a microdata item.
@@ -1083,12 +1083,12 @@ func Itemref(value string) Node {
 // Itemscope creates a microdata item.
 //
 //	func ExampleItemscope() {
-//		node := nodx.Itemscope("value")
+//		node := nodx.Itemscope(true)
 //		fmt.Println(node)
-//		// Output: itemscope="value"
+//		// Output: itemscope
 //	}
-func Itemscope(value string) Node {
-	return Attr("itemscope", value)
+func Itemscope(value bool) Node {
+	return AttrBool("itemscope", value)
 }
 
 // Itemtype specifies the vocabulary used by a microdata item.
@@ -1193,12 +1193,12 @@ func Longdesc(value string) Node {
 // Loop specifies that the audio/video will start over again, every time it is finished.
 //
 //	func ExampleLoop() {
-//		node := nodx.Loop("value")
+//		node := nodx.Loop(true)
 //		fmt.Println(node)
-//		// Output: loop="value"
+//		// Output: loop
 //	}
-func Loop(value string) Node {
-	return Attr("loop", value)
+func Loop(value bool) Node {
+	return AttrBool("loop", value)
 }
 
 // Low specifies the range that is considered to be a low value.
@@ -1314,23 +1314,23 @@ func Minlength(value string) Node {
 // Multiple specifies that a user can enter more than one value.
 //
 //	func ExampleMultiple() {
-//		node := nodx.Multiple("value")
+//		node := nodx.Multiple(true)
 //		fmt.Println(node)
-//		// Output: multiple="value"
+//		// Output: multiple
 //	}
-func Multiple(value string) Node {
-	return Attr("multiple", value)
+func Multiple(value bool) Node {
+	return AttrBool("multiple", value)
 }
 
 // Muted specifies that the audio output should be muted.
 //
 //	func ExampleMuted() {
-//		node := nodx.Muted("value")
+//		node := nodx.Muted(true)
 //		fmt.Println(node)
-//		// Output: muted="value"
+//		// Output: muted
 //	}
-func Muted(value string) Node {
-	return Attr("muted", value)
+func Muted(value bool) Node {
+	return AttrBool("muted", value)
 }
 
 // Name specifies the name of the element.
@@ -1358,12 +1358,12 @@ func Nohref(value string) Node {
 // Nomodule indicates that the script should not be executed in browsers that support module scripts.
 //
 //	func ExampleNomodule() {
-//		node := nodx.Nomodule("value")
+//		node := nodx.Nomodule(true)
 //		fmt.Println(node)
-//		// Output: nomodule="value"
+//		// Output: nomodule
 //	}
-func Nomodule(value string) Node {
-	return Attr("nomodule", value)
+func Nomodule(value bool) Node {
+	return AttrBool("nomodule", value)
 }
 
 // Nonce a cryptographic nonce used in Content Security Policy.
@@ -1402,12 +1402,12 @@ func Noshade(value string) Node {
 // Novalidate specifies that the form should not be validated when submitted.
 //
 //	func ExampleNovalidate() {
-//		node := nodx.Novalidate("value")
+//		node := nodx.Novalidate(true)
 //		fmt.Println(node)
-//		// Output: novalidate="value"
+//		// Output: novalidate
 //	}
-func Novalidate(value string) Node {
-	return Attr("novalidate", value)
+func Novalidate(value bool) Node {
+	return AttrBool("novalidate", value)
 }
 
 // Nowrap specifies that content should not wrap (deprecated).
@@ -2403,12 +2403,12 @@ func Onwheel(value string) Node {
 // Open specifies that the details should be visible to the user.
 //
 //	func ExampleOpen() {
-//		node := nodx.Open("value")
+//		node := nodx.Open(true)
 //		fmt.Println(node)
-//		// Output: open="value"
+//		// Output: open
 //	}
-func Open(value string) Node {
-	return Attr("open", value)
+func Open(value bool) Node {
+	return AttrBool("open", value)
 }
 
 // Optimum specifies the optimal value of the gauge.
@@ -2469,12 +2469,12 @@ func Placeholder(value string) Node {
 // Playsinline indicates that the video should play inline on mobile devices.
 //
 //	func ExamplePlaysinline() {
-//		node := nodx.Playsinline("value")
+//		node := nodx.Playsinline(true)
 //		fmt.Println(node)
-//		// Output: playsinline="value"
+//		// Output: playsinline
 //	}
-func Playsinline(value string) Node {
-	return Attr("playsinline", value)
+func Playsinline(value bool) Node {
+	return AttrBool("playsinline", value)
 }
 
 // Popover marks an element as a popover.
@@ -2546,12 +2546,12 @@ func Radiogroup(value string) Node {
 // Readonly specifies that the input field is read-only.
 //
 //	func ExampleReadonly() {
-//		node := nodx.Readonly("value")
+//		node := nodx.Readonly(true)
 //		fmt.Println(node)
-//		// Output: readonly="value"
+//		// Output: readonly
 //	}
-func Readonly(value string) Node {
-	return Attr("readonly", value)
+func Readonly(value bool) Node {
+	return AttrBool("readonly", value)
 }
 
 // Referrerpolicy specifies which referrer information to send when fetching a resource.
@@ -2579,12 +2579,12 @@ func Rel(value string) Node {
 // Required specifies that the input field must be filled out before submitting the form.
 //
 //	func ExampleRequired() {
-//		node := nodx.Required("value")
+//		node := nodx.Required(true)
 //		fmt.Println(node)
-//		// Output: required="value"
+//		// Output: required
 //	}
-func Required(value string) Node {
-	return Attr("required", value)
+func Required(value bool) Node {
+	return AttrBool("required", value)
 }
 
 // Results specifies the maximum number of results to show in a search input (deprecated).
@@ -2601,12 +2601,12 @@ func Results(value string) Node {
 // Reversed specifies that the list order should be descending (9,8,7...).
 //
 //	func ExampleReversed() {
-//		node := nodx.Reversed("value")
+//		node := nodx.Reversed(true)
 //		fmt.Println(node)
-//		// Output: reversed="value"
+//		// Output: reversed
 //	}
-func Reversed(value string) Node {
-	return Attr("reversed", value)
+func Reversed(value bool) Node {
+	return AttrBool("reversed", value)
 }
 
 // Role defines the role of an element for accessibility purposes.
@@ -2700,12 +2700,12 @@ func Scrolling(value string) Node {
 // Selected specifies that an option should be pre-selected when the page loads.
 //
 //	func ExampleSelected() {
-//		node := nodx.Selected("value")
+//		node := nodx.Selected(true)
 //		fmt.Println(node)
-//		// Output: selected="value"
+//		// Output: selected
 //	}
-func Selected(value string) Node {
-	return Attr("selected", value)
+func Selected(value bool) Node {
+	return AttrBool("selected", value)
 }
 
 // Shape specifies the shape of an area in an image-map.
@@ -2917,14 +2917,14 @@ func Translate(value string) Node {
 	return Attr("translate", value)
 }
 
-// Type specifies the type of element.
+// TypeAttr specifies the type of element.
 //
-//	func ExampleType() {
-//		node := nodx.Type("value")
+//	func ExampleTypeAttr() {
+//		node := nodx.TypeAttr("value")
 //		fmt.Println(node)
 //		// Output: type="value"
 //	}
-func Type(value string) Node {
+func TypeAttr(value string) Node {
 	return Attr("type", value)
 }
 

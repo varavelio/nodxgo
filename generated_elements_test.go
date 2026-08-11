@@ -1007,8 +1007,8 @@ func ExampleSection() {
 	// Output: <section id="1">Hello World!</section>
 }
 
-func ExampleSelect() {
-	node := nodx.Select(
+func ExampleSelectEl() {
+	node := nodx.SelectEl(
 		nodx.Id("1"),
 		nodx.Text("Hello World!"),
 	)
@@ -1266,8 +1266,8 @@ func ExampleUl() {
 	// Output: <ul id="1">Hello World!</ul>
 }
 
-func ExampleVar() {
-	node := nodx.Var(
+func ExampleVarEl() {
+	node := nodx.VarEl(
 		nodx.Id("1"),
 		nodx.Text("Hello World!"),
 	)

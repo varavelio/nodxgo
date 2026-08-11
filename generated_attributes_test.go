@@ -51,9 +51,9 @@ func ExampleAllow() {
 }
 
 func ExampleAllowfullscreen() {
-	node := nodx.Allowfullscreen("value")
+	node := nodx.Allowfullscreen(true)
 	fmt.Println(node)
-	// Output: allowfullscreen="value"
+	// Output: allowfullscreen
 }
 
 func ExampleAlt() {
@@ -81,9 +81,9 @@ func ExampleAs() {
 }
 
 func ExampleAsync() {
-	node := nodx.Async("value")
+	node := nodx.Async(true)
 	fmt.Println(node)
-	// Output: async="value"
+	// Output: async
 }
 
 func ExampleAutocapitalize() {
@@ -105,15 +105,15 @@ func ExampleAutocorrect() {
 }
 
 func ExampleAutofocus() {
-	node := nodx.Autofocus("value")
+	node := nodx.Autofocus(true)
 	fmt.Println(node)
-	// Output: autofocus="value"
+	// Output: autofocus
 }
 
 func ExampleAutoplay() {
-	node := nodx.Autoplay("value")
+	node := nodx.Autoplay(true)
 	fmt.Println(node)
-	// Output: autoplay="value"
+	// Output: autoplay
 }
 
 func ExampleAutosave() {
@@ -201,9 +201,9 @@ func ExampleCharset() {
 }
 
 func ExampleChecked() {
-	node := nodx.Checked("value")
+	node := nodx.Checked(true)
 	fmt.Println(node)
-	// Output: checked="value"
+	// Output: checked
 }
 
 func ExampleCiteAttr() {
@@ -291,9 +291,9 @@ func ExampleContextmenu() {
 }
 
 func ExampleControls() {
-	node := nodx.Controls("value")
+	node := nodx.Controls(true)
 	fmt.Println(node)
-	// Output: controls="value"
+	// Output: controls
 }
 
 func ExampleCoords() {
@@ -344,16 +344,16 @@ func ExampleDecoding() {
 	// Output: decoding="value"
 }
 
-func ExampleDefault() {
-	node := nodx.Default("value")
+func ExampleDefaultAttr() {
+	node := nodx.DefaultAttr(true)
 	fmt.Println(node)
-	// Output: default="value"
+	// Output: default
 }
 
-func ExampleDefer() {
-	node := nodx.Defer("value")
+func ExampleDeferAttr() {
+	node := nodx.DeferAttr(true)
 	fmt.Println(node)
-	// Output: defer="value"
+	// Output: defer
 }
 
 func ExampleDirAttr() {
@@ -369,9 +369,9 @@ func ExampleDirname() {
 }
 
 func ExampleDisabled() {
-	node := nodx.Disabled("value")
+	node := nodx.Disabled(true)
 	fmt.Println(node)
-	// Output: disabled="value"
+	// Output: disabled
 }
 
 func ExampleDownload() {
@@ -422,8 +422,8 @@ func ExampleFetchpriority() {
 	// Output: fetchpriority="value"
 }
 
-func ExampleFor() {
-	node := nodx.For("value")
+func ExampleForAttr() {
+	node := nodx.ForAttr("value")
 	fmt.Println(node)
 	// Output: for="value"
 }
@@ -453,9 +453,9 @@ func ExampleFormmethod() {
 }
 
 func ExampleFormnovalidate() {
-	node := nodx.Formnovalidate("value")
+	node := nodx.Formnovalidate(true)
 	fmt.Println(node)
-	// Output: formnovalidate="value"
+	// Output: formnovalidate
 }
 
 func ExampleFormtarget() {
@@ -555,9 +555,9 @@ func ExampleImportance() {
 }
 
 func ExampleInert() {
-	node := nodx.Inert("value")
+	node := nodx.Inert(true)
 	fmt.Println(node)
-	// Output: inert="value"
+	// Output: inert
 }
 
 func ExampleInputmode() {
@@ -573,9 +573,9 @@ func ExampleIntegrity() {
 }
 
 func ExampleIsmap() {
-	node := nodx.Ismap("value")
+	node := nodx.Ismap(true)
 	fmt.Println(node)
-	// Output: ismap="value"
+	// Output: ismap
 }
 
 func ExampleItemid() {
@@ -597,9 +597,9 @@ func ExampleItemref() {
 }
 
 func ExampleItemscope() {
-	node := nodx.Itemscope("value")
+	node := nodx.Itemscope(true)
 	fmt.Println(node)
-	// Output: itemscope="value"
+	// Output: itemscope
 }
 
 func ExampleItemtype() {
@@ -657,9 +657,9 @@ func ExampleLongdesc() {
 }
 
 func ExampleLoop() {
-	node := nodx.Loop("value")
+	node := nodx.Loop(true)
 	fmt.Println(node)
-	// Output: loop="value"
+	// Output: loop
 }
 
 func ExampleLow() {
@@ -723,15 +723,15 @@ func ExampleMinlength() {
 }
 
 func ExampleMultiple() {
-	node := nodx.Multiple("value")
+	node := nodx.Multiple(true)
 	fmt.Println(node)
-	// Output: multiple="value"
+	// Output: multiple
 }
 
 func ExampleMuted() {
-	node := nodx.Muted("value")
+	node := nodx.Muted(true)
 	fmt.Println(node)
-	// Output: muted="value"
+	// Output: muted
 }
 
 func ExampleName() {
@@ -747,9 +747,9 @@ func ExampleNohref() {
 }
 
 func ExampleNomodule() {
-	node := nodx.Nomodule("value")
+	node := nodx.Nomodule(true)
 	fmt.Println(node)
-	// Output: nomodule="value"
+	// Output: nomodule
 }
 
 func ExampleNonce() {
@@ -771,9 +771,9 @@ func ExampleNoshade() {
 }
 
 func ExampleNovalidate() {
-	node := nodx.Novalidate("value")
+	node := nodx.Novalidate(true)
 	fmt.Println(node)
-	// Output: novalidate="value"
+	// Output: novalidate
 }
 
 func ExampleNowrap() {
@@ -1317,9 +1317,9 @@ func ExampleOnwheel() {
 }
 
 func ExampleOpen() {
-	node := nodx.Open("value")
+	node := nodx.Open(true)
 	fmt.Println(node)
-	// Output: open="value"
+	// Output: open
 }
 
 func ExampleOptimum() {
@@ -1353,9 +1353,9 @@ func ExamplePlaceholder() {
 }
 
 func ExamplePlaysinline() {
-	node := nodx.Playsinline("value")
+	node := nodx.Playsinline(true)
 	fmt.Println(node)
-	// Output: playsinline="value"
+	// Output: playsinline
 }
 
 func ExamplePopover() {
@@ -1395,9 +1395,9 @@ func ExampleRadiogroup() {
 }
 
 func ExampleReadonly() {
-	node := nodx.Readonly("value")
+	node := nodx.Readonly(true)
 	fmt.Println(node)
-	// Output: readonly="value"
+	// Output: readonly
 }
 
 func ExampleReferrerpolicy() {
@@ -1413,9 +1413,9 @@ func ExampleRel() {
 }
 
 func ExampleRequired() {
-	node := nodx.Required("value")
+	node := nodx.Required(true)
 	fmt.Println(node)
-	// Output: required="value"
+	// Output: required
 }
 
 func ExampleResults() {
@@ -1425,9 +1425,9 @@ func ExampleResults() {
 }
 
 func ExampleReversed() {
-	node := nodx.Reversed("value")
+	node := nodx.Reversed(true)
 	fmt.Println(node)
-	// Output: reversed="value"
+	// Output: reversed
 }
 
 func ExampleRole() {
@@ -1479,9 +1479,9 @@ func ExampleScrolling() {
 }
 
 func ExampleSelected() {
-	node := nodx.Selected("value")
+	node := nodx.Selected(true)
 	fmt.Println(node)
-	// Output: selected="value"
+	// Output: selected
 }
 
 func ExampleShape() {
@@ -1598,8 +1598,8 @@ func ExampleTranslate() {
 	// Output: translate="value"
 }
 
-func ExampleType() {
-	node := nodx.Type("value")
+func ExampleTypeAttr() {
+	node := nodx.TypeAttr("value")
 	fmt.Println(node)
 	// Output: type="value"
 }
