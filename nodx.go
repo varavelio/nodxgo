@@ -72,6 +72,19 @@ func Attr(name string, value ...string) Node {
 	return newNodeAttribute(name, value...)
 }
 
+// AttrBool creates a new Node representing an HTML boolean attribute.
+//
+// Boolean attributes (like checked, disabled or required) take no value: they
+// either appear or disappear. If the value is true, the attribute is rendered
+// as just the attribute name (e.g. disabled). If the value is false, the
+// attribute is omitted entirely.
+func AttrBool(name string, value bool) Node {
+	if value {
+		return Attr(name)
+	}
+	return Group()
+}
+
 // Text creates a new Node representing an escaped HTML text node.
 // The value is HTML-escaped to prevent XSS attacks.
 func Text(value string) Node {

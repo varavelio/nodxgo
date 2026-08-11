@@ -111,6 +111,36 @@ func TestAttr(t *testing.T) {
 	})
 }
 
+func TestAttrBool(t *testing.T) {
+	t.Run("AttrBool with true value", func(t *testing.T) {
+		node := AttrBool("disabled", true)
+		expected := `disabled`
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("AttrBool with false value", func(t *testing.T) {
+		node := AttrBool("disabled", false)
+		expected := ""
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("AttrBool with empty name and true value", func(t *testing.T) {
+		node := AttrBool("", true)
+		expected := ""
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("AttrBool inside an element", func(t *testing.T) {
+		node := ElVoid("input",
+			Attr("type", "checkbox"),
+			AttrBool("checked", true),
+			AttrBool("disabled", false),
+		)
+		expected := `<input type="checkbox" checked>`
+		assert.Render(t, expected, node)
+	})
+}
+
 func TestText(t *testing.T) {
 	t.Run("Text with content", func(t *testing.T) {
 		node := Text("Hello <b>World</b>")
