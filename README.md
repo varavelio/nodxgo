@@ -142,6 +142,21 @@ nodx.Img(
 )
 ```
 
+**Boolean attributes** (like `checked`, `disabled` and `required`) take a `bool`
+value: when `true` they render as just the attribute name, and when `false` they
+are omitted entirely.
+
+```go
+isChecked := true
+isDisabled := false
+
+nodx.Input(
+  nodx.Checked(isChecked),
+  nodx.Disabled(isDisabled),
+)
+// Output: <input checked>
+```
+
 ### 3. **Dynamic class management**
 
 Use `ClassMap` to conditionally apply classes based on your logic.
@@ -209,6 +224,22 @@ more about all the included features.
 - **Dynamic classes and styles**: You can use the `nodx.ClassMap` and
   `nodx.StyleMap` to conditionally apply classes and styles based on your own
   logic.
+
+### 6. **Naming collisions**
+
+Following the
+[NodX specification](https://github.com/varavelio/nodx/blob/main/SPEC.md), the
+generated functions never collide with Go keywords or with each other. When a
+name would collide, it gets a deterministic suffix: `El` for elements and `Attr`
+for attributes.
+
+- **Go keyword collisions** (see
+  [`data/keywords.json`](https://github.com/varavelio/nodx/blob/main/data/keywords.json)):
+  `defer` → `DeferAttr`, `default` → `DefaultAttr`, `for` → `ForAttr`, `map` →
+  `MapEl`, `select` → `SelectEl`, `type` → `TypeAttr`, `var` → `VarEl`.
+- **Element/attribute collisions**: `data` → `DataEl`/`DataAttr`, `dir` →
+  `DirEl`/`DirAttr`, `form` → `FormEl`/`FormAttr`, `title` →
+  `TitleEl`/`TitleAttr`.
 
 ## Why Choose NodX?
 
