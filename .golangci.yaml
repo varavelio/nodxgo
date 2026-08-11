@@ -1,11 +1,44 @@
+version: "2"
+
 run:
-  timeout: "5m"
+  timeout: 5m
+
 linters:
-  disable-all: true
+  default: none
   enable:
-    - errcheck
-    - gosimple
     - govet
+    - errcheck
     - ineffassign
     - staticcheck
     - unused
+    - modernize
+    - godoclint
+    - godot
+    - errorlint
+    - nilerr
+    - nilnesserr
+    - durationcheck
+    - makezero
+    - noctx
+    - nolintlint
+    - sloglint
+  settings:
+    nolintlint:
+      # Enable to require an explanation of nonzero length after each nolint directive.
+      require-explanation: true
+      settings:
+    sloglint:
+      context: "all"
+      msg-style: "lowercased"
+      key-naming-case: "snake"
+      static-msg: true
+      attr-only: true
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+    - golines
+  settings:
+    gofumpt:
+      extra-rules: true
