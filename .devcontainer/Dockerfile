@@ -14,7 +14,8 @@ COPY --from=varavel/veta:0.1.1 /usr/local/bin/veta /usr/local/bin/veta
 ENV \
   DEBIAN_FRONTEND="noninteractive" \
   PIP_BREAK_SYSTEM_PACKAGES=1 \
-  CGO_ENABLED=0
+  CGO_ENABLED=0 \
+  DENO_INSTALL_ROOT=/usr/local
 
 RUN set -e && \
   # Update and install system dependencies
