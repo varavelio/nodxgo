@@ -1,20 +1,28 @@
 # NodX for Go
 
-<a href="https://pkg.go.dev/github.com/nodxdev/nodxgo">
-  <img src="https://pkg.go.dev/badge/github.com/nodxdev/nodxgo" alt="Go Reference"/>
-</a>
-<a href="https://goreportcard.com/report/nodxdev/nodxgo">
-  <img src="https://goreportcard.com/badge/nodxdev/nodxgo" alt="Go Report Card"/>
-</a>
-<a href="https://github.com/nodxdev/nodxgo/releases/latest">
-  <img src="https://img.shields.io/github/release/nodxdev/nodxgo.svg" alt="Release Version"/>
-</a>
-<a href="LICENSE">
-  <img src="https://img.shields.io/github/license/nodxdev/nodxgo.svg" alt="License"/>
-</a>
-<a href="https://github.com/nodxdev/nodxgo">
-  <img src="https://img.shields.io/github/stars/nodxdev/nodxgo?style=flat&label=github+stars"/>
-</a>
+<p align="center">
+  <a href="https://github.com/varavelio/nodxgo/actions">
+    <img src="https://github.com/varavelio/nodxgo/actions/workflows/ci.yaml/badge.svg" alt="CI status"/>
+  </a>
+  <a href="https://pkg.go.dev/github.com/varavelio/nodxgo">
+    <img src="https://pkg.go.dev/badge/github.com/varavelio/nodxgo" alt="Go Reference"/>
+  </a>
+  <a href="https://github.com/varavelio/nodxgo/releases/latest">
+    <img src="https://img.shields.io/github/release/varavelio/nodxgo.svg" alt="Release Version"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/varavelio/nodxgo.svg" alt="License"/>
+  </a>
+  <a href="https://github.com/varavelio/nodxgo">
+    <img src="https://img.shields.io/github/stars/varavelio/nodxgo?style=flat&label=github+stars"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://varavel.com">
+    <img src="https://cdn.jsdelivr.net/gh/varavelio/brand@1.0.0/dist/badges/project.svg" alt="A Varavel project"/>
+  </a>
+</p>
 
 ---
 
@@ -40,8 +48,8 @@ projects.
 Install the library:
 
 ```bash
-# Go 1.22 or later is required
-go get github.com/nodxdev/nodxgo
+# Tested on Go 1.22 and later
+go get github.com/varavelio/nodxgo
 ```
 
 Start building your HTML with intuitive, type-safe functions:
@@ -51,7 +59,7 @@ package main
 
 import (
   "os"
-  "github.com/nodxdev/nodxgo"
+  nodx "github.com/varavelio/nodxgo"
 )
 
 func main() {
@@ -184,8 +192,8 @@ func main() {
 ### 5. **Advanced features**
 
 Please refer to the
-[Full Documentation](https://pkg.go.dev/github.com/nodxdev/nodxgo) to read more
-about all the included features.
+[Full Documentation](https://pkg.go.dev/github.com/varavelio/nodxgo) to read
+more about all the included features.
 
 - **Custom components**: You can create your own components to avoid code
   duplication and keep your code clean.
@@ -217,8 +225,3 @@ about all the included features.
 
 NodX is open-source and available under the [MIT License](LICENSE). Feel free to
 use it in your personal or commercial projects.
-
----
-
-Start building safe, elegant, and maintainable HTML templates in Go today with
-**NodX**!
