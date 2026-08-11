@@ -221,6 +221,23 @@ more about all the included features.
 - **Perfect for Modern Go Developers**: Designed with Go's simplicity and
   elegance in mind.
 
+## Ecosystem
+
+NodX can be extended with additional libraries that provide ready-to-use
+components, attributes, and server utilities. Here are some projects built on
+top of NodX:
+
+- [**nodxgo-lucide**](https://github.com/varavelio/nodxgo-lucide) — Beautiful &
+  consistent icons for NodX Go.
+- [**nodxgo-alpine**](https://github.com/varavelio/nodxgo-alpine) — Alpine.js
+  attributes for NodX Go.
+- [**nodxgo-htmx**](https://github.com/varavelio/nodxgo-htmx) — HTMX attributes
+  and server utilities for NodX Go.
+
+> **Building your own NodX library?** We'd love to feature it here! Open a pull
+> request adding your project to this list, and help grow the NodX ecosystem
+> together.
+
 ## License
 
 NodX is open-source and available under the [MIT License](LICENSE). Feel free to
