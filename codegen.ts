@@ -35,7 +35,7 @@ async function getAttributes(): Promise<Attr[]> {
 }
 
 function runFormatter() {
-  const cmd = new Deno.Command("task", { args: ["fmt"] });
+  const cmd = new Deno.Command("task", { args: ["format"] });
   const out = cmd.outputSync();
   if (!out.success) {
     console.error(new TextDecoder().decode(out.stderr));
@@ -58,8 +58,10 @@ function generateElements(els: El[], attrs: Attr[]) {
     ``,
     `import (`,
     `\t"fmt"`,
+    ``,
     `\tnodx "github.com/nodxdev/nodxgo"`,
     `)`,
+    ``,
   ];
 
   for (const el of els) {
@@ -71,13 +73,13 @@ function generateElements(els: El[], attrs: Attr[]) {
       const example = [];
       example.push(`func Example${funcName.name}() {`);
       example.push(`\tnode := nodx.${funcName.name}(`);
-      example.push(`\t\tnodx.Id( "1"),`);
+      example.push(`\t\tnodx.Id("1"),`);
       example.push(`\t)`);
       example.push(`\tfmt.Println(node)`);
       example.push(`\t// Output: <${el.name} id="1">`);
       example.push(`}`);
-      example.push(``);
       testFile.push(example.join("\n"));
+      testFile.push(``);
 
       const exampleComment = example.map((line) => `//\t${line}`).join("\n");
 
@@ -100,8 +102,8 @@ function generateElements(els: El[], attrs: Attr[]) {
       example.push(`\tfmt.Println(node)`);
       example.push(`\t// Output: <${el.name} id="1">Hello World!</${el.name}>`);
       example.push(`}`);
-      example.push(``);
       testFile.push(example.join("\n"));
+      testFile.push(``);
 
       const exampleComment = example.map((line) => `//\t${line}`).join("\n");
 
@@ -137,8 +139,10 @@ function generateAttributes(els: El[], attrs: Attr[]) {
     ``,
     `import (`,
     `\t"fmt"`,
+    ``,
     `\tnodx "github.com/nodxdev/nodxgo"`,
     `)`,
+    ``,
   ];
 
   for (const attr of attrs) {
@@ -155,15 +159,15 @@ function generateAttributes(els: El[], attrs: Attr[]) {
       example.push(`\tfmt.Println(node)`);
       example.push(`\t// Output: ${attr.name}key="value"`);
       example.push(`}`);
-      example.push(``);
       testFile.push(example.join("\n"));
+      testFile.push(``);
 
       const exampleComment = example.map((line) => `//\t${line}`).join("\n");
 
       mainFile.push(`// ${funcName.name} ${attr.description.toLowerCase()}`);
       mainFile.push(`//`);
       mainFile.push(exampleComment);
-      mainFile.push(`func ${funcName.name}(key string,value string) Node {`);
+      mainFile.push(`func ${funcName.name}(key, value string) Node {`);
       mainFile.push(`\treturn Attr("${attr.name}"+key, value)`);
       mainFile.push(`}`);
       mainFile.push("");
@@ -176,8 +180,8 @@ function generateAttributes(els: El[], attrs: Attr[]) {
       example.push(`\tfmt.Println(node)`);
       example.push(`\t// Output: ${attr.name}="value"`);
       example.push(`}`);
-      example.push(``);
       testFile.push(example.join("\n"));
+      testFile.push(``);
 
       const exampleComment = example.map((line) => `//\t${line}`).join("\n");
 
