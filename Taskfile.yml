@@ -7,6 +7,14 @@ tasks:
     desc: List all available commands
     cmd: task --list-all
 
+  ci:
+    desc: Run full CI pipeline (codegen, format, test, lint)
+    cmds:
+      - task: codegen
+      - task: format
+      - task: test
+      - task: lint
+
   codegen:
     desc: Generate the utilities code
     cmd: deno run -A ./codegen.ts
