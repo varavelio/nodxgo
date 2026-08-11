@@ -115,6 +115,44 @@ func main() {
 </html>
 ```
 
+### Skip the `nodx.` prefix with a dot import
+
+Don't want to type `nodx.` in front of every element and attribute? You can use
+a [dot import](https://go.dev/ref/spec#Import_declarations) to bring all NodX
+identifiers directly into scope:
+
+```go
+package main
+
+import (
+  "os"
+  . "github.com/varavelio/nodxgo"
+)
+
+func main() {
+  myTemplate := Group(
+    DocType(),
+    Html(
+      Head(TitleEl(Text("My NodX Page"))),
+      Body(
+        Div(
+          Class("container"),
+          H1(Text("Welcome to NodX!")),
+        ),
+      ),
+    ),
+  )
+
+  _ = myTemplate.Render(os.Stdout)
+}
+```
+
+> **Use with caution ⚠️**: A dot import injects every exported NodX identifier
+> into your package's namespace, which can cause name collisions and make it
+> harder to tell where a function comes from. Many projects and linters
+> discourage this style, so reserve it for template files or scripts where
+> brevity matters most.
+
 ## Key Concepts
 
 ### 1. **Elements made easy**
