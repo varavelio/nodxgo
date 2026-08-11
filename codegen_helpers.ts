@@ -9,19 +9,24 @@ export interface El {
 export interface Attr {
   name: string;
   description: string;
+  isBoolean?: boolean;
 }
-
-export const staticConflicts = ["map"];
 
 export function hasConflict(
   name: string,
   els: El[],
   attrs: Attr[],
+  keywords: string[],
 ): boolean {
-  for (const conflict of staticConflicts) {
-    if (conflict.toLowerCase() === name.toLowerCase()) return true;
+  // Keyword collisions: if the name collides with a reserved keyword of the
+  // target language (see data/keywords.json), it must be escaped.
+  for (const keyword of keywords) {
+    if (keyword.toLowerCase() === name.toLowerCase()) return true;
   }
 
+  // Element/attribute collisions: if more than one element or attribute share
+  // the same name, they must be escaped (e.g. the title element and the title
+  // attribute).
   let matches = 0;
 
   for (const el of els) {

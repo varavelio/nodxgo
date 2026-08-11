@@ -8,9 +8,10 @@ import type { Attr, El } from "./codegen_helpers.ts";
 
 const elements = await getElements();
 const attributes = await getAttributes();
+const keywords = await getKeywords();
 
-generateElements(elements, attributes);
-generateAttributes(elements, attributes);
+generateElements(elements, attributes, keywords);
+generateAttributes(elements, attributes, keywords);
 runFormatter();
 
 ///////////////
@@ -34,6 +35,13 @@ async function getAttributes(): Promise<Attr[]> {
   );
 }
 
+async function getKeywords(): Promise<string[]> {
+  const data = await getJson<Record<string, string[]>>(
+    "https://raw.githubusercontent.com/nodxdev/nodx/refs/heads/main/data/keywords.json",
+  );
+  return data["Go"] ?? [];
+}
+
 function runFormatter() {
   const cmd = new Deno.Command("task", { args: ["format"] });
   const out = cmd.outputSync();
@@ -43,7 +51,7 @@ function runFormatter() {
   }
 }
 
-function generateElements(els: El[], attrs: Attr[]) {
+function generateElements(els: El[], attrs: Attr[], keywords: string[]) {
   const mainFile: string[] = [
     `package nodx`,
     ``,
@@ -65,7 +73,7 @@ function generateElements(els: El[], attrs: Attr[]) {
   ];
 
   for (const el of els) {
-    const isConflict = hasConflict(el.name, els, attrs);
+    const isConflict = hasConflict(el.name, els, attrs, keywords);
     const funcName = createFuncName(el.name, "El", isConflict);
     el.description = decapitalize(el.description);
 
@@ -124,7 +132,7 @@ function generateElements(els: El[], attrs: Attr[]) {
   console.log("Generated generated_elements.go");
 }
 
-function generateAttributes(els: El[], attrs: Attr[]) {
+function generateAttributes(els: El[], attrs: Attr[], keywords: string[]) {
   const mainFile: string[] = [
     `package nodx`,
     ``,
@@ -146,7 +154,7 @@ function generateAttributes(els: El[], attrs: Attr[]) {
   ];
 
   for (const attr of attrs) {
-    const isConflict = hasConflict(attr.name, els, attrs);
+    const isConflict = hasConflict(attr.name, els, attrs, keywords);
     const funcName = createFuncName(attr.name, "Attr", isConflict);
     attr.description = decapitalize(attr.description);
 
@@ -173,7 +181,28 @@ function generateAttributes(els: El[], attrs: Attr[]) {
       mainFile.push("");
     }
 
-    if (!funcName.isGlob) {
+    if (!funcName.isGlob && attr.isBoolean) {
+      const example = [];
+      example.push(`func Example${funcName.name}() {`);
+      example.push(`\tnode := nodx.${funcName.name}(true)`);
+      example.push(`\tfmt.Println(node)`);
+      example.push(`\t// Output: ${attr.name}`);
+      example.push(`}`);
+      testFile.push(example.join("\n"));
+      testFile.push(``);
+
+      const exampleComment = example.map((line) => `//\t${line}`).join("\n");
+
+      mainFile.push(`// ${funcName.name} ${attr.description}`);
+      mainFile.push(`//`);
+      mainFile.push(exampleComment);
+      mainFile.push(`func ${funcName.name}(value bool) Node {`);
+      mainFile.push(`\treturn AttrBool("${attr.name}", value)`);
+      mainFile.push(`}`);
+      mainFile.push("");
+    }
+
+    if (!funcName.isGlob && !attr.isBoolean) {
       const example = [];
       example.push(`func Example${funcName.name}() {`);
       example.push(`\tnode := nodx.${funcName.name}("value")`);

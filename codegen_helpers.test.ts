@@ -3,7 +3,6 @@ import {
   createFuncName,
   decapitalize,
   hasConflict,
-  staticConflicts,
 } from "./codegen_helpers.ts";
 import type { Attr, El } from "./codegen_helpers.ts";
 
@@ -18,7 +17,7 @@ Deno.test("test hasConflict", async (t) => {
       { name: "d", description: "" },
     ];
 
-    assertEquals(hasConflict("z", els, attrs), false);
+    assertEquals(hasConflict("z", els, attrs, []), false);
   });
 
   await t.step("one conflict", () => {
@@ -31,7 +30,7 @@ Deno.test("test hasConflict", async (t) => {
       { name: "d", description: "" },
     ];
 
-    assertEquals(hasConflict("a", els, attrs), false);
+    assertEquals(hasConflict("a", els, attrs, []), false);
   });
 
   await t.step("two conflicts", () => {
@@ -44,7 +43,7 @@ Deno.test("test hasConflict", async (t) => {
       { name: "c", description: "" },
     ];
 
-    assertEquals(hasConflict("a", els, attrs), true);
+    assertEquals(hasConflict("a", els, attrs, []), true);
   });
 
   await t.step("three conflicts", () => {
@@ -57,13 +56,18 @@ Deno.test("test hasConflict", async (t) => {
       { name: "b", description: "" },
     ];
 
-    assertEquals(hasConflict("a", els, attrs), true);
+    assertEquals(hasConflict("a", els, attrs, []), true);
   });
 
-  await t.step("static conflict", () => {
-    for (const conflict of staticConflicts) {
-      assertEquals(hasConflict(conflict, [], []), true);
-    }
+  await t.step("keyword conflict", () => {
+    assertEquals(hasConflict("map", [], [], ["map"]), true);
+    assertEquals(hasConflict("Map", [], [], ["map"]), true);
+    assertEquals(hasConflict("select", [], [], ["select"]), true);
+    assertEquals(hasConflict("type", [], [], ["type"]), true);
+    assertEquals(hasConflict("var", [], [], ["var"]), true);
+    assertEquals(hasConflict("default", [], [], ["default"]), true);
+    assertEquals(hasConflict("div", [], [], ["map"]), false);
+    assertEquals(hasConflict("map", [], [], []), false);
   });
 });
 
