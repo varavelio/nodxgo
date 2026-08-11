@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  default:
+    desc: List all available commands
+    cmd: task --list-all
+
+  codegen:
+    desc: Generate the utilities code
+    cmd: deno run -A ./codegen.ts
+
+  test:
+    desc: Test all code
+    cmds:
+      - deno test -A
+      - go test ./...
+      - CGO_ENABLED=1 go test -race ./...
+
+  format:
+    desc: Format all code
+    cmds:
+      - deno fmt .
+      - golangci-lint fmt ./...
+
+  lint:
+    desc: Lint all code
+    cmds:
+      - deno lint .
+      - golangci-lint run ./...
