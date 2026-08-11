@@ -3,7 +3,7 @@ package nodx_test
 import (
 	"fmt"
 
-	nodx "github.com/nodxdev/nodxgo"
+	nodx "github.com/varavelio/nodxgo"
 )
 
 func ExampleGroup() {

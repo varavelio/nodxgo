@@ -3,7 +3,7 @@ package nodx
 import (
 	"testing"
 
-	"github.com/nodxdev/nodxgo/internal/assert"
+	"github.com/varavelio/nodxgo/internal/assert"
 )
 
 func TestStyleMap(t *testing.T) {

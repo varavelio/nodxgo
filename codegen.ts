@@ -25,19 +25,19 @@ async function getJson<T>(path: string): Promise<T> {
 
 async function getElements(): Promise<El[]> {
   return await getJson(
-    "https://raw.githubusercontent.com/nodxdev/nodx/refs/heads/main/data/elements.json",
+    "https://raw.githubusercontent.com/varavelio/nodx/refs/heads/main/data/elements.json",
   );
 }
 
 async function getAttributes(): Promise<Attr[]> {
   return await getJson(
-    "https://raw.githubusercontent.com/nodxdev/nodx/refs/heads/main/data/attributes.json",
+    "https://raw.githubusercontent.com/varavelio/nodx/refs/heads/main/data/attributes.json",
   );
 }
 
 async function getKeywords(): Promise<string[]> {
   const data = await getJson<Record<string, string[]>>(
-    "https://raw.githubusercontent.com/nodxdev/nodx/refs/heads/main/data/keywords.json",
+    "https://raw.githubusercontent.com/varavelio/nodx/refs/heads/main/data/keywords.json",
   );
   return data["Go"] ?? [];
 }
@@ -67,7 +67,7 @@ function generateElements(els: El[], attrs: Attr[], keywords: string[]) {
     `import (`,
     `\t"fmt"`,
     ``,
-    `\tnodx "github.com/nodxdev/nodxgo"`,
+    `\tnodx "github.com/varavelio/nodxgo"`,
     `)`,
     ``,
   ];
@@ -148,7 +148,7 @@ function generateAttributes(els: El[], attrs: Attr[], keywords: string[]) {
     `import (`,
     `\t"fmt"`,
     ``,
-    `\tnodx "github.com/nodxdev/nodxgo"`,
+    `\tnodx "github.com/varavelio/nodxgo"`,
     `)`,
     ``,
   ];

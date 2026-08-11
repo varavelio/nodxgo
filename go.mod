@@ -1,3 +1,3 @@
-module github.com/nodxdev/nodxgo
+module github.com/varavelio/nodxgo
 
 go 1.22.0
