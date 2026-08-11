@@ -1,4 +1,4 @@
-# NodX for Go
+<h1 align="center">NodX for Go</h1>
 
 <p align="center">
   <a href="https://github.com/varavelio/nodxgo/actions">
