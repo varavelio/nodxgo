@@ -1,5 +1,6 @@
 a
 abbr
+acronym
 address
 applet
 area
@@ -11,6 +12,9 @@ base
 basefont
 bdi
 bdo
+bgsound
+big
+blink
 blockquote
 body
 br
@@ -22,6 +26,8 @@ cite
 code
 col
 colgroup
+command
+content
 data
 datalist
 dd
@@ -33,6 +39,7 @@ dir
 div
 dl
 dt
+element
 em
 embed
 fieldset
@@ -51,14 +58,17 @@ h5
 h6
 head
 header
+hgroup
 hr
 html
 i
 iframe
+image
 img
 input
 ins
 kbd
+keygen
 label
 legend
 li
@@ -66,9 +76,16 @@ link
 main
 map
 mark
+marquee
+menu
+menuitem
 meta
 meter
+multicol
 nav
+nextid
+nobr
+noembed
 noframes
 noscript
 object
@@ -79,6 +96,8 @@ output
 p
 param
 picture
+plaintext
+portal
 pre
 progress
 q
@@ -90,11 +109,14 @@ ruby
 s
 samp
 script
+search
 section
 select
+shadow
 slot
 small
 source
+spacer
 span
 strike
 strong
@@ -121,3 +143,4 @@ ul
 var
 video
 wbr
+xmp

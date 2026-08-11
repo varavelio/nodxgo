@@ -24,7 +24,7 @@ var _ Node = (*StyleMap)(nil)
 //		"margin: 5px":             true,  // Included
 //	}
 //
-// This will render the style attribute as: style="border: 1px solid black; margin: 5px"
+// This will render the style attribute as: style="border: 1px solid black; margin: 5px".
 type StyleMap map[string]bool
 
 func (sm StyleMap) Render(w io.Writer) error {

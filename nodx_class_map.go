@@ -30,7 +30,7 @@ var _ Node = (*ClassMap)(nil)
 //		"always-on":  true,           // Always included
 //	}
 //
-// This will render the class attribute as: class="odd-class always-on"
+// This will render the class attribute as: class="odd-class always-on".
 type ClassMap map[string]bool
 
 func (cm ClassMap) Render(w io.Writer) error {

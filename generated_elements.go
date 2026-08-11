@@ -16,18 +16,32 @@ func A(children ...Node) Node {
 	return El("a", children...)
 }
 
-// Abbr defines an abbreviation or acronym.
+// AbbrEl defines an abbreviation or acronym.
 //
-//	func ExampleAbbr() {
-//		node := nodx.Abbr(
+//	func ExampleAbbrEl() {
+//		node := nodx.AbbrEl(
 //			nodx.Id("1"),
 //			nodx.Text("Hello World!"),
 //		)
 //		fmt.Println(node)
 //		// Output: <abbr id="1">Hello World!</abbr>
 //	}
-func Abbr(children ...Node) Node {
+func AbbrEl(children ...Node) Node {
 	return El("abbr", children...)
+}
+
+// Acronym defines an acronym (deprecated).
+//
+//	func ExampleAcronym() {
+//		node := nodx.Acronym(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <acronym id="1">Hello World!</acronym>
+//	}
+func Acronym(children ...Node) Node {
+	return El("acronym", children...)
 }
 
 // Address defines contact information for the author/owner of a document.
@@ -62,7 +76,7 @@ func Applet(children ...Node) Node {
 //
 //	func ExampleArea() {
 //		node := nodx.Area(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <area id="1">
@@ -131,7 +145,7 @@ func B(children ...Node) Node {
 //
 //	func ExampleBase() {
 //		node := nodx.Base(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <base id="1">
@@ -145,13 +159,12 @@ func Base(children ...Node) Node {
 //	func ExampleBasefont() {
 //		node := nodx.Basefont(
 //			nodx.Id("1"),
-//			nodx.Text("Hello World!"),
 //		)
 //		fmt.Println(node)
-//		// Output: <basefont id="1">Hello World!</basefont>
+//		// Output: <basefont id="1">
 //	}
 func Basefont(children ...Node) Node {
-	return El("basefont", children...)
+	return ElVoid("basefont", children...)
 }
 
 // Bdi isolates a part of text that might be formatted in a different direction from other text.
@@ -180,6 +193,47 @@ func Bdi(children ...Node) Node {
 //	}
 func Bdo(children ...Node) Node {
 	return El("bdo", children...)
+}
+
+// Bgsound sets the background sound of the document (deprecated).
+//
+//	func ExampleBgsound() {
+//		node := nodx.Bgsound(
+//			nodx.Id("1"),
+//		)
+//		fmt.Println(node)
+//		// Output: <bgsound id="1">
+//	}
+func Bgsound(children ...Node) Node {
+	return ElVoid("bgsound", children...)
+}
+
+// Big defines big text (deprecated).
+//
+//	func ExampleBig() {
+//		node := nodx.Big(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <big id="1">Hello World!</big>
+//	}
+func Big(children ...Node) Node {
+	return El("big", children...)
+}
+
+// Blink defines text that blinks (deprecated, non-standard).
+//
+//	func ExampleBlink() {
+//		node := nodx.Blink(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <blink id="1">Hello World!</blink>
+//	}
+func Blink(children ...Node) Node {
+	return El("blink", children...)
 }
 
 // Blockquote defines a section that is quoted from another source.
@@ -214,7 +268,7 @@ func Body(children ...Node) Node {
 //
 //	func ExampleBr() {
 //		node := nodx.Br(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <br id="1">
@@ -311,7 +365,7 @@ func CodeEl(children ...Node) Node {
 //
 //	func ExampleCol() {
 //		node := nodx.Col(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <col id="1">
@@ -332,6 +386,33 @@ func Col(children ...Node) Node {
 //	}
 func Colgroup(children ...Node) Node {
 	return El("colgroup", children...)
+}
+
+// Command defines a command the user can invoke (deprecated).
+//
+//	func ExampleCommand() {
+//		node := nodx.Command(
+//			nodx.Id("1"),
+//		)
+//		fmt.Println(node)
+//		// Output: <command id="1">
+//	}
+func Command(children ...Node) Node {
+	return ElVoid("command", children...)
+}
+
+// ContentEl defines an insertion point in a shadow DOM (deprecated).
+//
+//	func ExampleContentEl() {
+//		node := nodx.ContentEl(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <content id="1">Hello World!</content>
+//	}
+func ContentEl(children ...Node) Node {
+	return El("content", children...)
 }
 
 // DataEl links the given content with a machine-readable translation.
@@ -488,6 +569,20 @@ func Dt(children ...Node) Node {
 	return El("dt", children...)
 }
 
+// Element defines a custom element (deprecated).
+//
+//	func ExampleElement() {
+//		node := nodx.Element(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <element id="1">Hello World!</element>
+//	}
+func Element(children ...Node) Node {
+	return El("element", children...)
+}
+
 // Em defines emphasized text.
 //
 //	func ExampleEm() {
@@ -506,7 +601,7 @@ func Em(children ...Node) Node {
 //
 //	func ExampleEmbed() {
 //		node := nodx.Embed(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <embed id="1">
@@ -599,17 +694,17 @@ func FormEl(children ...Node) Node {
 	return El("form", children...)
 }
 
-// Frame defines a window (a frame) in a frameset (deprecated).
+// FrameEl defines a window (a frame) in a frameset (deprecated).
 //
-//	func ExampleFrame() {
-//		node := nodx.Frame(
+//	func ExampleFrameEl() {
+//		node := nodx.FrameEl(
 //			nodx.Id("1"),
 //			nodx.Text("Hello World!"),
 //		)
 //		fmt.Println(node)
 //		// Output: <frame id="1">Hello World!</frame>
 //	}
-func Frame(children ...Node) Node {
+func FrameEl(children ...Node) Node {
 	return El("frame", children...)
 }
 
@@ -739,11 +834,25 @@ func Header(children ...Node) Node {
 	return El("header", children...)
 }
 
+// Hgroup groups a set of headings.
+//
+//	func ExampleHgroup() {
+//		node := nodx.Hgroup(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <hgroup id="1">Hello World!</hgroup>
+//	}
+func Hgroup(children ...Node) Node {
+	return El("hgroup", children...)
+}
+
 // Hr defines a thematic change in the content.
 //
 //	func ExampleHr() {
 //		node := nodx.Hr(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <hr id="1">
@@ -794,11 +903,24 @@ func Iframe(children ...Node) Node {
 	return El("iframe", children...)
 }
 
+// Image defines an image (obsolete, use img instead).
+//
+//	func ExampleImage() {
+//		node := nodx.Image(
+//			nodx.Id("1"),
+//		)
+//		fmt.Println(node)
+//		// Output: <image id="1">
+//	}
+func Image(children ...Node) Node {
+	return ElVoid("image", children...)
+}
+
 // Img defines an image.
 //
 //	func ExampleImg() {
 //		node := nodx.Img(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <img id="1">
@@ -811,7 +933,7 @@ func Img(children ...Node) Node {
 //
 //	func ExampleInput() {
 //		node := nodx.Input(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <input id="1">
@@ -846,6 +968,19 @@ func Ins(children ...Node) Node {
 //	}
 func Kbd(children ...Node) Node {
 	return El("kbd", children...)
+}
+
+// Keygen generates a key-pair for form submission (deprecated).
+//
+//	func ExampleKeygen() {
+//		node := nodx.Keygen(
+//			nodx.Id("1"),
+//		)
+//		fmt.Println(node)
+//		// Output: <keygen id="1">
+//	}
+func Keygen(children ...Node) Node {
+	return ElVoid("keygen", children...)
 }
 
 // LabelEl defines a label for an input element.
@@ -894,7 +1029,7 @@ func Li(children ...Node) Node {
 //
 //	func ExampleLink() {
 //		node := nodx.Link(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <link id="1">
@@ -945,11 +1080,52 @@ func Mark(children ...Node) Node {
 	return El("mark", children...)
 }
 
+// Marquee defines scrolling text (deprecated).
+//
+//	func ExampleMarquee() {
+//		node := nodx.Marquee(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <marquee id="1">Hello World!</marquee>
+//	}
+func Marquee(children ...Node) Node {
+	return El("marquee", children...)
+}
+
+// Menu defines an unordered list of commands or menu items.
+//
+//	func ExampleMenu() {
+//		node := nodx.Menu(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <menu id="1">Hello World!</menu>
+//	}
+func Menu(children ...Node) Node {
+	return El("menu", children...)
+}
+
+// Menuitem defines a command a user can invoke from a popup menu (deprecated).
+//
+//	func ExampleMenuitem() {
+//		node := nodx.Menuitem(
+//			nodx.Id("1"),
+//		)
+//		fmt.Println(node)
+//		// Output: <menuitem id="1">
+//	}
+func Menuitem(children ...Node) Node {
+	return ElVoid("menuitem", children...)
+}
+
 // Meta defines metadata about an HTML document.
 //
 //	func ExampleMeta() {
 //		node := nodx.Meta(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <meta id="1">
@@ -972,6 +1148,20 @@ func Meter(children ...Node) Node {
 	return El("meter", children...)
 }
 
+// Multicol defines a multi-column layout (obsolete).
+//
+//	func ExampleMulticol() {
+//		node := nodx.Multicol(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <multicol id="1">Hello World!</multicol>
+//	}
+func Multicol(children ...Node) Node {
+	return El("multicol", children...)
+}
+
 // Nav defines navigation links.
 //
 //	func ExampleNav() {
@@ -984,6 +1174,47 @@ func Meter(children ...Node) Node {
 //	}
 func Nav(children ...Node) Node {
 	return El("nav", children...)
+}
+
+// Nextid defines a unique id for the document (obsolete).
+//
+//	func ExampleNextid() {
+//		node := nodx.Nextid(
+//			nodx.Id("1"),
+//		)
+//		fmt.Println(node)
+//		// Output: <nextid id="1">
+//	}
+func Nextid(children ...Node) Node {
+	return ElVoid("nextid", children...)
+}
+
+// Nobr defines text that should not wrap (deprecated).
+//
+//	func ExampleNobr() {
+//		node := nodx.Nobr(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <nobr id="1">Hello World!</nobr>
+//	}
+func Nobr(children ...Node) Node {
+	return El("nobr", children...)
+}
+
+// Noembed provides alternate content for browsers without embed support (deprecated).
+//
+//	func ExampleNoembed() {
+//		node := nodx.Noembed(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <noembed id="1">Hello World!</noembed>
+//	}
+func Noembed(children ...Node) Node {
+	return El("noembed", children...)
 }
 
 // Noframes defines an alternate content for users that do not support frames (deprecated).
@@ -1102,7 +1333,7 @@ func P(children ...Node) Node {
 //
 //	func ExampleParam() {
 //		node := nodx.Param(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <param id="1">
@@ -1123,6 +1354,34 @@ func Param(children ...Node) Node {
 //	}
 func Picture(children ...Node) Node {
 	return El("picture", children...)
+}
+
+// Plaintext renders everything that follows as plain text (obsolete).
+//
+//	func ExamplePlaintext() {
+//		node := nodx.Plaintext(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <plaintext id="1">Hello World!</plaintext>
+//	}
+func Plaintext(children ...Node) Node {
+	return El("plaintext", children...)
+}
+
+// Portal embeds another HTML page into the current one (experimental).
+//
+//	func ExamplePortal() {
+//		node := nodx.Portal(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <portal id="1">Hello World!</portal>
+//	}
+func Portal(children ...Node) Node {
+	return El("portal", children...)
 }
 
 // Pre defines preformatted text.
@@ -1279,6 +1538,20 @@ func Script(children ...Node) Node {
 	return El("script", children...)
 }
 
+// Search represents a set of form controls for searching.
+//
+//	func ExampleSearch() {
+//		node := nodx.Search(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <search id="1">Hello World!</search>
+//	}
+func Search(children ...Node) Node {
+	return El("search", children...)
+}
+
 // Section defines a section in a document.
 //
 //	func ExampleSection() {
@@ -1305,6 +1578,20 @@ func Section(children ...Node) Node {
 //	}
 func Select(children ...Node) Node {
 	return El("select", children...)
+}
+
+// Shadow defines a shadow DOM insertion point (deprecated).
+//
+//	func ExampleShadow() {
+//		node := nodx.Shadow(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <shadow id="1">Hello World!</shadow>
+//	}
+func Shadow(children ...Node) Node {
+	return El("shadow", children...)
 }
 
 // SlotEl defines a placeholder inside a web component.
@@ -1339,13 +1626,27 @@ func Small(children ...Node) Node {
 //
 //	func ExampleSource() {
 //		node := nodx.Source(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <source id="1">
 //	}
 func Source(children ...Node) Node {
 	return ElVoid("source", children...)
+}
+
+// Spacer inserts white space (obsolete).
+//
+//	func ExampleSpacer() {
+//		node := nodx.Spacer(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <spacer id="1">Hello World!</spacer>
+//	}
+func Spacer(children ...Node) Node {
+	return El("spacer", children...)
 }
 
 // SpanEl defines a section in a document.
@@ -1618,7 +1919,7 @@ func Tr(children ...Node) Node {
 //
 //	func ExampleTrack() {
 //		node := nodx.Track(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <track id="1">
@@ -1701,11 +2002,25 @@ func Video(children ...Node) Node {
 //
 //	func ExampleWbr() {
 //		node := nodx.Wbr(
-//			nodx.Id( "1"),
+//			nodx.Id("1"),
 //		)
 //		fmt.Println(node)
 //		// Output: <wbr id="1">
 //	}
 func Wbr(children ...Node) Node {
 	return ElVoid("wbr", children...)
+}
+
+// Xmp renders text between tags as-is (obsolete).
+//
+//	func ExampleXmp() {
+//		node := nodx.Xmp(
+//			nodx.Id("1"),
+//			nodx.Text("Hello World!"),
+//		)
+//		fmt.Println(node)
+//		// Output: <xmp id="1">Hello World!</xmp>
+//	}
+func Xmp(children ...Node) Node {
+	return El("xmp", children...)
 }

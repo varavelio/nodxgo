@@ -4,6 +4,7 @@ package nodx_test
 
 import (
 	"fmt"
+
 	nodx "github.com/nodxdev/nodxgo"
 )
 
@@ -16,13 +17,22 @@ func ExampleA() {
 	// Output: <a id="1">Hello World!</a>
 }
 
-func ExampleAbbr() {
-	node := nodx.Abbr(
+func ExampleAbbrEl() {
+	node := nodx.AbbrEl(
 		nodx.Id("1"),
 		nodx.Text("Hello World!"),
 	)
 	fmt.Println(node)
 	// Output: <abbr id="1">Hello World!</abbr>
+}
+
+func ExampleAcronym() {
+	node := nodx.Acronym(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <acronym id="1">Hello World!</acronym>
 }
 
 func ExampleAddress() {
@@ -98,10 +108,9 @@ func ExampleBase() {
 func ExampleBasefont() {
 	node := nodx.Basefont(
 		nodx.Id("1"),
-		nodx.Text("Hello World!"),
 	)
 	fmt.Println(node)
-	// Output: <basefont id="1">Hello World!</basefont>
+	// Output: <basefont id="1">
 }
 
 func ExampleBdi() {
@@ -120,6 +129,32 @@ func ExampleBdo() {
 	)
 	fmt.Println(node)
 	// Output: <bdo id="1">Hello World!</bdo>
+}
+
+func ExampleBgsound() {
+	node := nodx.Bgsound(
+		nodx.Id("1"),
+	)
+	fmt.Println(node)
+	// Output: <bgsound id="1">
+}
+
+func ExampleBig() {
+	node := nodx.Big(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <big id="1">Hello World!</big>
+}
+
+func ExampleBlink() {
+	node := nodx.Blink(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <blink id="1">Hello World!</blink>
 }
 
 func ExampleBlockquote() {
@@ -217,6 +252,23 @@ func ExampleColgroup() {
 	)
 	fmt.Println(node)
 	// Output: <colgroup id="1">Hello World!</colgroup>
+}
+
+func ExampleCommand() {
+	node := nodx.Command(
+		nodx.Id("1"),
+	)
+	fmt.Println(node)
+	// Output: <command id="1">
+}
+
+func ExampleContentEl() {
+	node := nodx.ContentEl(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <content id="1">Hello World!</content>
 }
 
 func ExampleDataEl() {
@@ -318,6 +370,15 @@ func ExampleDt() {
 	// Output: <dt id="1">Hello World!</dt>
 }
 
+func ExampleElement() {
+	node := nodx.Element(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <element id="1">Hello World!</element>
+}
+
 func ExampleEm() {
 	node := nodx.Em(
 		nodx.Id("1"),
@@ -389,8 +450,8 @@ func ExampleFormEl() {
 	// Output: <form id="1">Hello World!</form>
 }
 
-func ExampleFrame() {
-	node := nodx.Frame(
+func ExampleFrameEl() {
+	node := nodx.FrameEl(
 		nodx.Id("1"),
 		nodx.Text("Hello World!"),
 	)
@@ -479,6 +540,15 @@ func ExampleHeader() {
 	// Output: <header id="1">Hello World!</header>
 }
 
+func ExampleHgroup() {
+	node := nodx.Hgroup(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <hgroup id="1">Hello World!</hgroup>
+}
+
 func ExampleHr() {
 	node := nodx.Hr(
 		nodx.Id("1"),
@@ -514,6 +584,14 @@ func ExampleIframe() {
 	// Output: <iframe id="1">Hello World!</iframe>
 }
 
+func ExampleImage() {
+	node := nodx.Image(
+		nodx.Id("1"),
+	)
+	fmt.Println(node)
+	// Output: <image id="1">
+}
+
 func ExampleImg() {
 	node := nodx.Img(
 		nodx.Id("1"),
@@ -546,6 +624,14 @@ func ExampleKbd() {
 	)
 	fmt.Println(node)
 	// Output: <kbd id="1">Hello World!</kbd>
+}
+
+func ExampleKeygen() {
+	node := nodx.Keygen(
+		nodx.Id("1"),
+	)
+	fmt.Println(node)
+	// Output: <keygen id="1">
 }
 
 func ExampleLabelEl() {
@@ -610,6 +696,32 @@ func ExampleMark() {
 	// Output: <mark id="1">Hello World!</mark>
 }
 
+func ExampleMarquee() {
+	node := nodx.Marquee(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <marquee id="1">Hello World!</marquee>
+}
+
+func ExampleMenu() {
+	node := nodx.Menu(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <menu id="1">Hello World!</menu>
+}
+
+func ExampleMenuitem() {
+	node := nodx.Menuitem(
+		nodx.Id("1"),
+	)
+	fmt.Println(node)
+	// Output: <menuitem id="1">
+}
+
 func ExampleMeta() {
 	node := nodx.Meta(
 		nodx.Id("1"),
@@ -627,6 +739,15 @@ func ExampleMeter() {
 	// Output: <meter id="1">Hello World!</meter>
 }
 
+func ExampleMulticol() {
+	node := nodx.Multicol(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <multicol id="1">Hello World!</multicol>
+}
+
 func ExampleNav() {
 	node := nodx.Nav(
 		nodx.Id("1"),
@@ -634,6 +755,32 @@ func ExampleNav() {
 	)
 	fmt.Println(node)
 	// Output: <nav id="1">Hello World!</nav>
+}
+
+func ExampleNextid() {
+	node := nodx.Nextid(
+		nodx.Id("1"),
+	)
+	fmt.Println(node)
+	// Output: <nextid id="1">
+}
+
+func ExampleNobr() {
+	node := nodx.Nobr(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <nobr id="1">Hello World!</nobr>
+}
+
+func ExampleNoembed() {
+	node := nodx.Noembed(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <noembed id="1">Hello World!</noembed>
 }
 
 func ExampleNoframes() {
@@ -723,6 +870,24 @@ func ExamplePicture() {
 	)
 	fmt.Println(node)
 	// Output: <picture id="1">Hello World!</picture>
+}
+
+func ExamplePlaintext() {
+	node := nodx.Plaintext(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <plaintext id="1">Hello World!</plaintext>
+}
+
+func ExamplePortal() {
+	node := nodx.Portal(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <portal id="1">Hello World!</portal>
 }
 
 func ExamplePre() {
@@ -824,6 +989,15 @@ func ExampleScript() {
 	// Output: <script id="1">Hello World!</script>
 }
 
+func ExampleSearch() {
+	node := nodx.Search(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <search id="1">Hello World!</search>
+}
+
 func ExampleSection() {
 	node := nodx.Section(
 		nodx.Id("1"),
@@ -840,6 +1014,15 @@ func ExampleSelect() {
 	)
 	fmt.Println(node)
 	// Output: <select id="1">Hello World!</select>
+}
+
+func ExampleShadow() {
+	node := nodx.Shadow(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <shadow id="1">Hello World!</shadow>
 }
 
 func ExampleSlotEl() {
@@ -866,6 +1049,15 @@ func ExampleSource() {
 	)
 	fmt.Println(node)
 	// Output: <source id="1">
+}
+
+func ExampleSpacer() {
+	node := nodx.Spacer(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <spacer id="1">Hello World!</spacer>
 }
 
 func ExampleSpanEl() {
@@ -1098,4 +1290,13 @@ func ExampleWbr() {
 	)
 	fmt.Println(node)
 	// Output: <wbr id="1">
+}
+
+func ExampleXmp() {
+	node := nodx.Xmp(
+		nodx.Id("1"),
+		nodx.Text("Hello World!"),
+	)
+	fmt.Println(node)
+	// Output: <xmp id="1">Hello World!</xmp>
 }

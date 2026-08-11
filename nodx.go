@@ -151,7 +151,7 @@ func Eval(fn func() Node) Node {
 //
 // This is a special element and should be used inside a nodx.Group.
 //
-// Output: <!DOCTYPE html>
+// Output: <!DOCTYPE html>.
 func DocType() Node {
 	return Raw("<!DOCTYPE html>")
 }

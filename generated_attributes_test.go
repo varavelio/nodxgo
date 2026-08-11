@@ -4,8 +4,15 @@ package nodx_test
 
 import (
 	"fmt"
+
 	nodx "github.com/nodxdev/nodxgo"
 )
+
+func ExampleAbbrAttr() {
+	node := nodx.AbbrAttr("value")
+	fmt.Println(node)
+	// Output: abbr="value"
+}
 
 func ExampleAccept() {
 	node := nodx.Accept("value")
@@ -43,10 +50,34 @@ func ExampleAllow() {
 	// Output: allow="value"
 }
 
+func ExampleAllowfullscreen() {
+	node := nodx.Allowfullscreen("value")
+	fmt.Println(node)
+	// Output: allowfullscreen="value"
+}
+
 func ExampleAlt() {
 	node := nodx.Alt("value")
 	fmt.Println(node)
 	// Output: alt="value"
+}
+
+func ExampleArchive() {
+	node := nodx.Archive("value")
+	fmt.Println(node)
+	// Output: archive="value"
+}
+
+func ExampleAria() {
+	node := nodx.Aria("key", "value")
+	fmt.Println(node)
+	// Output: aria-key="value"
+}
+
+func ExampleAs() {
+	node := nodx.As("value")
+	fmt.Println(node)
+	// Output: as="value"
 }
 
 func ExampleAsync() {
@@ -67,6 +98,12 @@ func ExampleAutocomplete() {
 	// Output: autocomplete="value"
 }
 
+func ExampleAutocorrect() {
+	node := nodx.Autocorrect("value")
+	fmt.Println(node)
+	// Output: autocorrect="value"
+}
+
 func ExampleAutofocus() {
 	node := nodx.Autofocus("value")
 	fmt.Println(node)
@@ -79,6 +116,18 @@ func ExampleAutoplay() {
 	// Output: autoplay="value"
 }
 
+func ExampleAutosave() {
+	node := nodx.Autosave("value")
+	fmt.Println(node)
+	// Output: autosave="value"
+}
+
+func ExampleAxis() {
+	node := nodx.Axis("value")
+	fmt.Println(node)
+	// Output: axis="value"
+}
+
 func ExampleBackground() {
 	node := nodx.Background("value")
 	fmt.Println(node)
@@ -89,6 +138,12 @@ func ExampleBgcolor() {
 	node := nodx.Bgcolor("value")
 	fmt.Println(node)
 	// Output: bgcolor="value"
+}
+
+func ExampleBlocking() {
+	node := nodx.Blocking("value")
+	fmt.Println(node)
+	// Output: blocking="value"
 }
 
 func ExampleBorder() {
@@ -109,10 +164,34 @@ func ExampleCapture() {
 	// Output: capture="value"
 }
 
+func ExampleCellpadding() {
+	node := nodx.Cellpadding("value")
+	fmt.Println(node)
+	// Output: cellpadding="value"
+}
+
+func ExampleCellspacing() {
+	node := nodx.Cellspacing("value")
+	fmt.Println(node)
+	// Output: cellspacing="value"
+}
+
 func ExampleChallenge() {
 	node := nodx.Challenge("value")
 	fmt.Println(node)
 	// Output: challenge="value"
+}
+
+func ExampleChar() {
+	node := nodx.Char("value")
+	fmt.Println(node)
+	// Output: char="value"
+}
+
+func ExampleCharoff() {
+	node := nodx.Charoff("value")
+	fmt.Println(node)
+	// Output: charoff="value"
 }
 
 func ExampleCharset() {
@@ -139,6 +218,18 @@ func ExampleClass() {
 	// Output: class="value"
 }
 
+func ExampleClassid() {
+	node := nodx.Classid("value")
+	fmt.Println(node)
+	// Output: classid="value"
+}
+
+func ExampleClear() {
+	node := nodx.Clear("value")
+	fmt.Println(node)
+	// Output: clear="value"
+}
+
 func ExampleCodeAttr() {
 	node := nodx.CodeAttr("value")
 	fmt.Println(node)
@@ -149,6 +240,12 @@ func ExampleCodebase() {
 	node := nodx.Codebase("value")
 	fmt.Println(node)
 	// Output: codebase="value"
+}
+
+func ExampleCodetype() {
+	node := nodx.Codetype("value")
+	fmt.Println(node)
+	// Output: codetype="value"
 }
 
 func ExampleColor() {
@@ -169,8 +266,14 @@ func ExampleColspan() {
 	// Output: colspan="value"
 }
 
-func ExampleContent() {
-	node := nodx.Content("value")
+func ExampleCompact() {
+	node := nodx.Compact("value")
+	fmt.Println(node)
+	// Output: compact="value"
+}
+
+func ExampleContentAttr() {
+	node := nodx.ContentAttr("value")
 	fmt.Println(node)
 	// Output: content="value"
 }
@@ -217,10 +320,22 @@ func ExampleDataAttr() {
 	// Output: data="value"
 }
 
+func ExampleData() {
+	node := nodx.Data("key", "value")
+	fmt.Println(node)
+	// Output: data-key="value"
+}
+
 func ExampleDatetime() {
 	node := nodx.Datetime("value")
 	fmt.Println(node)
 	// Output: datetime="value"
+}
+
+func ExampleDeclare() {
+	node := nodx.Declare("value")
+	fmt.Println(node)
+	// Output: declare="value"
 }
 
 func ExampleDecoding() {
@@ -283,6 +398,30 @@ func ExampleEnterkeyhint() {
 	// Output: enterkeyhint="value"
 }
 
+func ExampleEvent() {
+	node := nodx.Event("value")
+	fmt.Println(node)
+	// Output: event="value"
+}
+
+func ExampleExportparts() {
+	node := nodx.Exportparts("value")
+	fmt.Println(node)
+	// Output: exportparts="value"
+}
+
+func ExampleFace() {
+	node := nodx.Face("value")
+	fmt.Println(node)
+	// Output: face="value"
+}
+
+func ExampleFetchpriority() {
+	node := nodx.Fetchpriority("value")
+	fmt.Println(node)
+	// Output: fetchpriority="value"
+}
+
 func ExampleFor() {
 	node := nodx.For("value")
 	fmt.Println(node)
@@ -325,6 +464,18 @@ func ExampleFormtarget() {
 	// Output: formtarget="value"
 }
 
+func ExampleFrameAttr() {
+	node := nodx.FrameAttr("value")
+	fmt.Println(node)
+	// Output: frame="value"
+}
+
+func ExampleFrameborder() {
+	node := nodx.Frameborder("value")
+	fmt.Println(node)
+	// Output: frameborder="value"
+}
+
 func ExampleHeaders() {
 	node := nodx.Headers("value")
 	fmt.Println(node)
@@ -361,6 +512,12 @@ func ExampleHreflang() {
 	// Output: hreflang="value"
 }
 
+func ExampleHspace() {
+	node := nodx.Hspace("value")
+	fmt.Println(node)
+	// Output: hspace="value"
+}
+
 func ExampleHttpEquiv() {
 	node := nodx.HttpEquiv("value")
 	fmt.Println(node)
@@ -379,10 +536,34 @@ func ExampleId() {
 	// Output: id="value"
 }
 
+func ExampleImagesizes() {
+	node := nodx.Imagesizes("value")
+	fmt.Println(node)
+	// Output: imagesizes="value"
+}
+
+func ExampleImagesrcset() {
+	node := nodx.Imagesrcset("value")
+	fmt.Println(node)
+	// Output: imagesrcset="value"
+}
+
 func ExampleImportance() {
 	node := nodx.Importance("value")
 	fmt.Println(node)
 	// Output: importance="value"
+}
+
+func ExampleInert() {
+	node := nodx.Inert("value")
+	fmt.Println(node)
+	// Output: inert="value"
+}
+
+func ExampleInputmode() {
+	node := nodx.Inputmode("value")
+	fmt.Println(node)
+	// Output: inputmode="value"
 }
 
 func ExampleIntegrity() {
@@ -397,10 +578,34 @@ func ExampleIsmap() {
 	// Output: ismap="value"
 }
 
+func ExampleItemid() {
+	node := nodx.Itemid("value")
+	fmt.Println(node)
+	// Output: itemid="value"
+}
+
 func ExampleItemprop() {
 	node := nodx.Itemprop("value")
 	fmt.Println(node)
 	// Output: itemprop="value"
+}
+
+func ExampleItemref() {
+	node := nodx.Itemref("value")
+	fmt.Println(node)
+	// Output: itemref="value"
+}
+
+func ExampleItemscope() {
+	node := nodx.Itemscope("value")
+	fmt.Println(node)
+	// Output: itemscope="value"
+}
+
+func ExampleItemtype() {
+	node := nodx.Itemtype("value")
+	fmt.Println(node)
+	// Output: itemtype="value"
 }
 
 func ExampleKeytype() {
@@ -433,16 +638,22 @@ func ExampleLanguage() {
 	// Output: language="value"
 }
 
+func ExampleList() {
+	node := nodx.List("value")
+	fmt.Println(node)
+	// Output: list="value"
+}
+
 func ExampleLoading() {
 	node := nodx.Loading("value")
 	fmt.Println(node)
 	// Output: loading="value"
 }
 
-func ExampleList() {
-	node := nodx.List("value")
+func ExampleLongdesc() {
+	node := nodx.Longdesc("value")
 	fmt.Println(node)
-	// Output: list="value"
+	// Output: longdesc="value"
 }
 
 func ExampleLoop() {
@@ -461,6 +672,18 @@ func ExampleManifest() {
 	node := nodx.Manifest("value")
 	fmt.Println(node)
 	// Output: manifest="value"
+}
+
+func ExampleMarginheight() {
+	node := nodx.Marginheight("value")
+	fmt.Println(node)
+	// Output: marginheight="value"
+}
+
+func ExampleMarginwidth() {
+	node := nodx.Marginwidth("value")
+	fmt.Println(node)
+	// Output: marginwidth="value"
 }
 
 func ExampleMax() {
@@ -517,6 +740,12 @@ func ExampleName() {
 	// Output: name="value"
 }
 
+func ExampleNohref() {
+	node := nodx.Nohref("value")
+	fmt.Println(node)
+	// Output: nohref="value"
+}
+
 func ExampleNomodule() {
 	node := nodx.Nomodule("value")
 	fmt.Println(node)
@@ -529,10 +758,562 @@ func ExampleNonce() {
 	// Output: nonce="value"
 }
 
+func ExampleNoresize() {
+	node := nodx.Noresize("value")
+	fmt.Println(node)
+	// Output: noresize="value"
+}
+
+func ExampleNoshade() {
+	node := nodx.Noshade("value")
+	fmt.Println(node)
+	// Output: noshade="value"
+}
+
 func ExampleNovalidate() {
 	node := nodx.Novalidate("value")
 	fmt.Println(node)
 	// Output: novalidate="value"
+}
+
+func ExampleNowrap() {
+	node := nodx.Nowrap("value")
+	fmt.Println(node)
+	// Output: nowrap="value"
+}
+
+func ExampleOnabort() {
+	node := nodx.Onabort("value")
+	fmt.Println(node)
+	// Output: onabort="value"
+}
+
+func ExampleOnanimationcancel() {
+	node := nodx.Onanimationcancel("value")
+	fmt.Println(node)
+	// Output: onanimationcancel="value"
+}
+
+func ExampleOnanimationend() {
+	node := nodx.Onanimationend("value")
+	fmt.Println(node)
+	// Output: onanimationend="value"
+}
+
+func ExampleOnanimationiteration() {
+	node := nodx.Onanimationiteration("value")
+	fmt.Println(node)
+	// Output: onanimationiteration="value"
+}
+
+func ExampleOnanimationstart() {
+	node := nodx.Onanimationstart("value")
+	fmt.Println(node)
+	// Output: onanimationstart="value"
+}
+
+func ExampleOnauxclick() {
+	node := nodx.Onauxclick("value")
+	fmt.Println(node)
+	// Output: onauxclick="value"
+}
+
+func ExampleOnbeforeinput() {
+	node := nodx.Onbeforeinput("value")
+	fmt.Println(node)
+	// Output: onbeforeinput="value"
+}
+
+func ExampleOnbeforematch() {
+	node := nodx.Onbeforematch("value")
+	fmt.Println(node)
+	// Output: onbeforematch="value"
+}
+
+func ExampleOnbeforetoggle() {
+	node := nodx.Onbeforetoggle("value")
+	fmt.Println(node)
+	// Output: onbeforetoggle="value"
+}
+
+func ExampleOnblur() {
+	node := nodx.Onblur("value")
+	fmt.Println(node)
+	// Output: onblur="value"
+}
+
+func ExampleOncancel() {
+	node := nodx.Oncancel("value")
+	fmt.Println(node)
+	// Output: oncancel="value"
+}
+
+func ExampleOncanplay() {
+	node := nodx.Oncanplay("value")
+	fmt.Println(node)
+	// Output: oncanplay="value"
+}
+
+func ExampleOncanplaythrough() {
+	node := nodx.Oncanplaythrough("value")
+	fmt.Println(node)
+	// Output: oncanplaythrough="value"
+}
+
+func ExampleOnchange() {
+	node := nodx.Onchange("value")
+	fmt.Println(node)
+	// Output: onchange="value"
+}
+
+func ExampleOnclick() {
+	node := nodx.Onclick("value")
+	fmt.Println(node)
+	// Output: onclick="value"
+}
+
+func ExampleOnclose() {
+	node := nodx.Onclose("value")
+	fmt.Println(node)
+	// Output: onclose="value"
+}
+
+func ExampleOncontextlost() {
+	node := nodx.Oncontextlost("value")
+	fmt.Println(node)
+	// Output: oncontextlost="value"
+}
+
+func ExampleOncontextmenu() {
+	node := nodx.Oncontextmenu("value")
+	fmt.Println(node)
+	// Output: oncontextmenu="value"
+}
+
+func ExampleOncontextrestored() {
+	node := nodx.Oncontextrestored("value")
+	fmt.Println(node)
+	// Output: oncontextrestored="value"
+}
+
+func ExampleOncopy() {
+	node := nodx.Oncopy("value")
+	fmt.Println(node)
+	// Output: oncopy="value"
+}
+
+func ExampleOncuechange() {
+	node := nodx.Oncuechange("value")
+	fmt.Println(node)
+	// Output: oncuechange="value"
+}
+
+func ExampleOncut() {
+	node := nodx.Oncut("value")
+	fmt.Println(node)
+	// Output: oncut="value"
+}
+
+func ExampleOndblclick() {
+	node := nodx.Ondblclick("value")
+	fmt.Println(node)
+	// Output: ondblclick="value"
+}
+
+func ExampleOndrag() {
+	node := nodx.Ondrag("value")
+	fmt.Println(node)
+	// Output: ondrag="value"
+}
+
+func ExampleOndragend() {
+	node := nodx.Ondragend("value")
+	fmt.Println(node)
+	// Output: ondragend="value"
+}
+
+func ExampleOndragenter() {
+	node := nodx.Ondragenter("value")
+	fmt.Println(node)
+	// Output: ondragenter="value"
+}
+
+func ExampleOndragleave() {
+	node := nodx.Ondragleave("value")
+	fmt.Println(node)
+	// Output: ondragleave="value"
+}
+
+func ExampleOndragover() {
+	node := nodx.Ondragover("value")
+	fmt.Println(node)
+	// Output: ondragover="value"
+}
+
+func ExampleOndragstart() {
+	node := nodx.Ondragstart("value")
+	fmt.Println(node)
+	// Output: ondragstart="value"
+}
+
+func ExampleOndrop() {
+	node := nodx.Ondrop("value")
+	fmt.Println(node)
+	// Output: ondrop="value"
+}
+
+func ExampleOndurationchange() {
+	node := nodx.Ondurationchange("value")
+	fmt.Println(node)
+	// Output: ondurationchange="value"
+}
+
+func ExampleOnemptied() {
+	node := nodx.Onemptied("value")
+	fmt.Println(node)
+	// Output: onemptied="value"
+}
+
+func ExampleOnended() {
+	node := nodx.Onended("value")
+	fmt.Println(node)
+	// Output: onended="value"
+}
+
+func ExampleOnerror() {
+	node := nodx.Onerror("value")
+	fmt.Println(node)
+	// Output: onerror="value"
+}
+
+func ExampleOnfocus() {
+	node := nodx.Onfocus("value")
+	fmt.Println(node)
+	// Output: onfocus="value"
+}
+
+func ExampleOnformdata() {
+	node := nodx.Onformdata("value")
+	fmt.Println(node)
+	// Output: onformdata="value"
+}
+
+func ExampleOngotpointercapture() {
+	node := nodx.Ongotpointercapture("value")
+	fmt.Println(node)
+	// Output: ongotpointercapture="value"
+}
+
+func ExampleOninput() {
+	node := nodx.Oninput("value")
+	fmt.Println(node)
+	// Output: oninput="value"
+}
+
+func ExampleOninvalid() {
+	node := nodx.Oninvalid("value")
+	fmt.Println(node)
+	// Output: oninvalid="value"
+}
+
+func ExampleOnkeydown() {
+	node := nodx.Onkeydown("value")
+	fmt.Println(node)
+	// Output: onkeydown="value"
+}
+
+func ExampleOnkeypress() {
+	node := nodx.Onkeypress("value")
+	fmt.Println(node)
+	// Output: onkeypress="value"
+}
+
+func ExampleOnkeyup() {
+	node := nodx.Onkeyup("value")
+	fmt.Println(node)
+	// Output: onkeyup="value"
+}
+
+func ExampleOnload() {
+	node := nodx.Onload("value")
+	fmt.Println(node)
+	// Output: onload="value"
+}
+
+func ExampleOnloadeddata() {
+	node := nodx.Onloadeddata("value")
+	fmt.Println(node)
+	// Output: onloadeddata="value"
+}
+
+func ExampleOnloadedmetadata() {
+	node := nodx.Onloadedmetadata("value")
+	fmt.Println(node)
+	// Output: onloadedmetadata="value"
+}
+
+func ExampleOnloadstart() {
+	node := nodx.Onloadstart("value")
+	fmt.Println(node)
+	// Output: onloadstart="value"
+}
+
+func ExampleOnlostpointercapture() {
+	node := nodx.Onlostpointercapture("value")
+	fmt.Println(node)
+	// Output: onlostpointercapture="value"
+}
+
+func ExampleOnmousedown() {
+	node := nodx.Onmousedown("value")
+	fmt.Println(node)
+	// Output: onmousedown="value"
+}
+
+func ExampleOnmouseenter() {
+	node := nodx.Onmouseenter("value")
+	fmt.Println(node)
+	// Output: onmouseenter="value"
+}
+
+func ExampleOnmouseleave() {
+	node := nodx.Onmouseleave("value")
+	fmt.Println(node)
+	// Output: onmouseleave="value"
+}
+
+func ExampleOnmousemove() {
+	node := nodx.Onmousemove("value")
+	fmt.Println(node)
+	// Output: onmousemove="value"
+}
+
+func ExampleOnmouseout() {
+	node := nodx.Onmouseout("value")
+	fmt.Println(node)
+	// Output: onmouseout="value"
+}
+
+func ExampleOnmouseover() {
+	node := nodx.Onmouseover("value")
+	fmt.Println(node)
+	// Output: onmouseover="value"
+}
+
+func ExampleOnmouseup() {
+	node := nodx.Onmouseup("value")
+	fmt.Println(node)
+	// Output: onmouseup="value"
+}
+
+func ExampleOnpaste() {
+	node := nodx.Onpaste("value")
+	fmt.Println(node)
+	// Output: onpaste="value"
+}
+
+func ExampleOnpause() {
+	node := nodx.Onpause("value")
+	fmt.Println(node)
+	// Output: onpause="value"
+}
+
+func ExampleOnplay() {
+	node := nodx.Onplay("value")
+	fmt.Println(node)
+	// Output: onplay="value"
+}
+
+func ExampleOnplaying() {
+	node := nodx.Onplaying("value")
+	fmt.Println(node)
+	// Output: onplaying="value"
+}
+
+func ExampleOnpointercancel() {
+	node := nodx.Onpointercancel("value")
+	fmt.Println(node)
+	// Output: onpointercancel="value"
+}
+
+func ExampleOnpointerdown() {
+	node := nodx.Onpointerdown("value")
+	fmt.Println(node)
+	// Output: onpointerdown="value"
+}
+
+func ExampleOnpointerenter() {
+	node := nodx.Onpointerenter("value")
+	fmt.Println(node)
+	// Output: onpointerenter="value"
+}
+
+func ExampleOnpointerleave() {
+	node := nodx.Onpointerleave("value")
+	fmt.Println(node)
+	// Output: onpointerleave="value"
+}
+
+func ExampleOnpointermove() {
+	node := nodx.Onpointermove("value")
+	fmt.Println(node)
+	// Output: onpointermove="value"
+}
+
+func ExampleOnpointerout() {
+	node := nodx.Onpointerout("value")
+	fmt.Println(node)
+	// Output: onpointerout="value"
+}
+
+func ExampleOnpointerover() {
+	node := nodx.Onpointerover("value")
+	fmt.Println(node)
+	// Output: onpointerover="value"
+}
+
+func ExampleOnpointerup() {
+	node := nodx.Onpointerup("value")
+	fmt.Println(node)
+	// Output: onpointerup="value"
+}
+
+func ExampleOnprogress() {
+	node := nodx.Onprogress("value")
+	fmt.Println(node)
+	// Output: onprogress="value"
+}
+
+func ExampleOnratechange() {
+	node := nodx.Onratechange("value")
+	fmt.Println(node)
+	// Output: onratechange="value"
+}
+
+func ExampleOnreset() {
+	node := nodx.Onreset("value")
+	fmt.Println(node)
+	// Output: onreset="value"
+}
+
+func ExampleOnresize() {
+	node := nodx.Onresize("value")
+	fmt.Println(node)
+	// Output: onresize="value"
+}
+
+func ExampleOnscroll() {
+	node := nodx.Onscroll("value")
+	fmt.Println(node)
+	// Output: onscroll="value"
+}
+
+func ExampleOnscrollend() {
+	node := nodx.Onscrollend("value")
+	fmt.Println(node)
+	// Output: onscrollend="value"
+}
+
+func ExampleOnsecuritypolicyviolation() {
+	node := nodx.Onsecuritypolicyviolation("value")
+	fmt.Println(node)
+	// Output: onsecuritypolicyviolation="value"
+}
+
+func ExampleOnseeked() {
+	node := nodx.Onseeked("value")
+	fmt.Println(node)
+	// Output: onseeked="value"
+}
+
+func ExampleOnseeking() {
+	node := nodx.Onseeking("value")
+	fmt.Println(node)
+	// Output: onseeking="value"
+}
+
+func ExampleOnselect() {
+	node := nodx.Onselect("value")
+	fmt.Println(node)
+	// Output: onselect="value"
+}
+
+func ExampleOnslotchange() {
+	node := nodx.Onslotchange("value")
+	fmt.Println(node)
+	// Output: onslotchange="value"
+}
+
+func ExampleOnstalled() {
+	node := nodx.Onstalled("value")
+	fmt.Println(node)
+	// Output: onstalled="value"
+}
+
+func ExampleOnsubmit() {
+	node := nodx.Onsubmit("value")
+	fmt.Println(node)
+	// Output: onsubmit="value"
+}
+
+func ExampleOnsuspend() {
+	node := nodx.Onsuspend("value")
+	fmt.Println(node)
+	// Output: onsuspend="value"
+}
+
+func ExampleOntimeupdate() {
+	node := nodx.Ontimeupdate("value")
+	fmt.Println(node)
+	// Output: ontimeupdate="value"
+}
+
+func ExampleOntoggle() {
+	node := nodx.Ontoggle("value")
+	fmt.Println(node)
+	// Output: ontoggle="value"
+}
+
+func ExampleOntransitioncancel() {
+	node := nodx.Ontransitioncancel("value")
+	fmt.Println(node)
+	// Output: ontransitioncancel="value"
+}
+
+func ExampleOntransitionend() {
+	node := nodx.Ontransitionend("value")
+	fmt.Println(node)
+	// Output: ontransitionend="value"
+}
+
+func ExampleOntransitionrun() {
+	node := nodx.Ontransitionrun("value")
+	fmt.Println(node)
+	// Output: ontransitionrun="value"
+}
+
+func ExampleOntransitionstart() {
+	node := nodx.Ontransitionstart("value")
+	fmt.Println(node)
+	// Output: ontransitionstart="value"
+}
+
+func ExampleOnvolumechange() {
+	node := nodx.Onvolumechange("value")
+	fmt.Println(node)
+	// Output: onvolumechange="value"
+}
+
+func ExampleOnwaiting() {
+	node := nodx.Onwaiting("value")
+	fmt.Println(node)
+	// Output: onwaiting="value"
+}
+
+func ExampleOnwheel() {
+	node := nodx.Onwheel("value")
+	fmt.Println(node)
+	// Output: onwheel="value"
 }
 
 func ExampleOpen() {
@@ -545,6 +1326,12 @@ func ExampleOptimum() {
 	node := nodx.Optimum("value")
 	fmt.Println(node)
 	// Output: optimum="value"
+}
+
+func ExamplePart() {
+	node := nodx.Part("value")
+	fmt.Println(node)
+	// Output: part="value"
 }
 
 func ExamplePattern() {
@@ -571,6 +1358,24 @@ func ExamplePlaysinline() {
 	// Output: playsinline="value"
 }
 
+func ExamplePopover() {
+	node := nodx.Popover("value")
+	fmt.Println(node)
+	// Output: popover="value"
+}
+
+func ExamplePopovertarget() {
+	node := nodx.Popovertarget("value")
+	fmt.Println(node)
+	// Output: popovertarget="value"
+}
+
+func ExamplePopovertargetaction() {
+	node := nodx.Popovertargetaction("value")
+	fmt.Println(node)
+	// Output: popovertargetaction="value"
+}
+
 func ExamplePoster() {
 	node := nodx.Poster("value")
 	fmt.Println(node)
@@ -581,6 +1386,12 @@ func ExamplePreload() {
 	node := nodx.Preload("value")
 	fmt.Println(node)
 	// Output: preload="value"
+}
+
+func ExampleRadiogroup() {
+	node := nodx.Radiogroup("value")
+	fmt.Println(node)
+	// Output: radiogroup="value"
 }
 
 func ExampleReadonly() {
@@ -607,10 +1418,22 @@ func ExampleRequired() {
 	// Output: required="value"
 }
 
+func ExampleResults() {
+	node := nodx.Results("value")
+	fmt.Println(node)
+	// Output: results="value"
+}
+
 func ExampleReversed() {
 	node := nodx.Reversed("value")
 	fmt.Println(node)
 	// Output: reversed="value"
+}
+
+func ExampleRole() {
+	node := nodx.Role("value")
+	fmt.Println(node)
+	// Output: role="value"
 }
 
 func ExampleRows() {
@@ -623,6 +1446,12 @@ func ExampleRowspan() {
 	node := nodx.Rowspan("value")
 	fmt.Println(node)
 	// Output: rowspan="value"
+}
+
+func ExampleRules() {
+	node := nodx.Rules("value")
+	fmt.Println(node)
+	// Output: rules="value"
 }
 
 func ExampleSandbox() {
@@ -641,6 +1470,12 @@ func ExampleScoped() {
 	node := nodx.Scoped("value")
 	fmt.Println(node)
 	// Output: scoped="value"
+}
+
+func ExampleScrolling() {
+	node := nodx.Scrolling("value")
+	fmt.Println(node)
+	// Output: scrolling="value"
 }
 
 func ExampleSelected() {
@@ -709,6 +1544,12 @@ func ExampleSrcset() {
 	// Output: srcset="value"
 }
 
+func ExampleStandby() {
+	node := nodx.Standby("value")
+	fmt.Println(node)
+	// Output: standby="value"
+}
+
 func ExampleStart() {
 	node := nodx.Start("value")
 	fmt.Println(node)
@@ -769,10 +1610,28 @@ func ExampleUsemap() {
 	// Output: usemap="value"
 }
 
+func ExampleValign() {
+	node := nodx.Valign("value")
+	fmt.Println(node)
+	// Output: valign="value"
+}
+
 func ExampleValue() {
 	node := nodx.Value("value")
 	fmt.Println(node)
 	// Output: value="value"
+}
+
+func ExampleValuetype() {
+	node := nodx.Valuetype("value")
+	fmt.Println(node)
+	// Output: valuetype="value"
+}
+
+func ExampleVspace() {
+	node := nodx.Vspace("value")
+	fmt.Println(node)
+	// Output: vspace="value"
 }
 
 func ExampleWidth() {
@@ -785,22 +1644,4 @@ func ExampleWrap() {
 	node := nodx.Wrap("value")
 	fmt.Println(node)
 	// Output: wrap="value"
-}
-
-func ExampleAria() {
-	node := nodx.Aria("key", "value")
-	fmt.Println(node)
-	// Output: aria-key="value"
-}
-
-func ExampleData() {
-	node := nodx.Data("key", "value")
-	fmt.Println(node)
-	// Output: data-key="value"
-}
-
-func ExampleRole() {
-	node := nodx.Role("value")
-	fmt.Println(node)
-	// Output: role="value"
 }
