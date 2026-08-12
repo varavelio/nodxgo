@@ -141,6 +141,44 @@ func TestAttrBool(t *testing.T) {
 	})
 }
 
+func TestAttrList(t *testing.T) {
+	t.Run("Single value", func(t *testing.T) {
+		expected := `class="btn"`
+		node := AttrList("class", "btn")
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("Multiple values joined with single space", func(t *testing.T) {
+		expected := `class="btn btn-primary btn-lg"`
+		node := AttrList("class", "btn", "btn-primary", "btn-lg")
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("Empty values are ignored", func(t *testing.T) {
+		expected := `class="btn btn-sm btn-primary"`
+		node := AttrList("class", "btn btn-sm", "", "btn-primary", "")
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("All values empty renders empty attribute", func(t *testing.T) {
+		expected := `class=""`
+		node := AttrList("class", "", "")
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("No values at all renders empty attribute", func(t *testing.T) {
+		expected := `class=""`
+		node := AttrList("class")
+		assert.Render(t, expected, node)
+	})
+
+	t.Run("Value is HTML-escaped", func(t *testing.T) {
+		expected := `class="btn&quot;btn"`
+		node := AttrList("class", "btn\"btn")
+		assert.Render(t, expected, node)
+	})
+}
+
 func TestText(t *testing.T) {
 	t.Run("Text with content", func(t *testing.T) {
 		node := Text("Hello <b>World</b>")

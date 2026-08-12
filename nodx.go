@@ -11,6 +11,7 @@ package nodx
 import (
 	"fmt"
 	"io"
+	"strings"
 )
 
 // Node is the interface that wraps the basic Render methods used in the
@@ -83,6 +84,27 @@ func AttrBool(name string, value bool) Node {
 		return Attr(name)
 	}
 	return Group()
+}
+
+// AttrList creates a new Node representing an HTML attribute whose value is a
+// space-separated list of tokens, like the class attribute.
+//
+// Each value is treated as a single token: empty values are ignored and the
+// rest are joined with a single space. The result is HTML-escaped to prevent
+// XSS attacks.
+//
+// Example:
+//
+//	nodx.AttrList("class", "btn btn-sm", "", "btn-primary")
+//	// Output: class="btn btn-sm btn-primary"
+func AttrList(name string, values ...string) Node {
+	tokens := make([]string, 0, len(values))
+	for _, value := range values {
+		if value != "" {
+			tokens = append(tokens, value)
+		}
+	}
+	return Attr(name, strings.Join(tokens, " "))
 }
 
 // Text creates a new Node representing an escaped HTML text node.
