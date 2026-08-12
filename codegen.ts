@@ -196,9 +196,11 @@ function generateAttributes(els: El[], attrs: Attr[], keywords: string[]) {
     if (!funcName.isGlob && !attr.isBoolean && listAttrs.has(attr.name)) {
       const example = [];
       example.push(`func Example${funcName.name}() {`);
-      example.push(`\tnode := nodx.${funcName.name}("a", "b")`);
+      example.push(
+        `\tnode := nodx.${funcName.name}("value-a value-b", "value-c")`,
+      );
       example.push(`\tfmt.Println(node)`);
-      example.push(`\t// Output: ${attr.name}="a b"`);
+      example.push(`\t// Output: ${attr.name}="value-a value-b value-c"`);
       example.push(`}`);
       testFile.push(example.join("\n"));
       testFile.push(``);
