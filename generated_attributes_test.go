@@ -213,9 +213,9 @@ func ExampleCiteAttr() {
 }
 
 func ExampleClass() {
-	node := nodx.Class("a", "b")
+	node := nodx.Class("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: class="a b"
+	// Output: class="value-a value-b value-c"
 }
 
 func ExampleClassid() {

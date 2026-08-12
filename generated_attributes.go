@@ -379,9 +379,9 @@ func CiteAttr(value string) Node {
 // Class specifies one or more class names for an element.
 //
 //	func ExampleClass() {
-//		node := nodx.Class("a", "b")
+//		node := nodx.Class("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: class="a b"
+//		// Output: class="value-a value-b value-c"
 //	}
 func Class(values ...string) Node {
 	return AttrList("class", values...)
