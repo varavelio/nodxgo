@@ -10,6 +10,7 @@ export interface Attr {
   name: string;
   description: string;
   isBoolean?: boolean;
+  isList?: boolean;
 }
 
 export function hasConflict(

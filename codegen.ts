@@ -6,18 +6,6 @@ import {
 } from "./codegen_helpers.ts";
 import type { Attr, El } from "./codegen_helpers.ts";
 
-// Attributes whose values are space-separated lists of tokens.
-//
-// These are generated as variadic functions (e.g. Class("a", "b")) that join
-// their values with a single space, instead of taking a single pre-joined
-// string. Add an attribute name to this set to opt it into that behavior.
-//
-// Current list attributes:
-//   - class
-const listAttrs = new Set([
-  "class",
-]);
-
 const elements = await getElements();
 const attributes = await getAttributes();
 const keywords = await getKeywords();
@@ -193,7 +181,7 @@ function generateAttributes(els: El[], attrs: Attr[], keywords: string[]) {
       mainFile.push("");
     }
 
-    if (!funcName.isGlob && !attr.isBoolean && listAttrs.has(attr.name)) {
+    if (!funcName.isGlob && !attr.isBoolean && attr.isList) {
       const example = [];
       example.push(`func Example${funcName.name}() {`);
       example.push(
@@ -237,7 +225,7 @@ function generateAttributes(els: El[], attrs: Attr[], keywords: string[]) {
       mainFile.push("");
     }
 
-    if (!funcName.isGlob && !attr.isBoolean && !listAttrs.has(attr.name)) {
+    if (!funcName.isGlob && !attr.isBoolean && !attr.isList) {
       const example = [];
       example.push(`func Example${funcName.name}() {`);
       example.push(`\tnode := nodx.${funcName.name}("value")`);
