@@ -30,8 +30,7 @@ func (nt nodeText) Render(w io.Writer) error {
 	if nt.text == "" {
 		return nil
 	}
-	_, err := fmt.Fprintf(w, "%s", nt.text)
-	if err != nil {
+	if _, err := io.WriteString(w, nt.text); err != nil {
 		return fmt.Errorf("failed to render text: %w", err)
 	}
 

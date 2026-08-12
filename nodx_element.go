@@ -34,8 +34,8 @@ func newNodeElement(isVoid bool, name string, children ...Node) nodeElement {
 //
 // It returns two slices, the first are elements and the second are attributes.
 func categorizeChildren(children []Node) ([]Node, []Node) {
-	elements := []Node{}
-	attributes := []Node{}
+	elements := make([]Node, 0, len(children))
+	attributes := make([]Node, 0, len(children))
 
 	for _, child := range children {
 		if child == nil {
@@ -65,39 +65,44 @@ func (ne nodeElement) Render(w io.Writer) error {
 
 	els, attrs := categorizeChildren(ne.children)
 
-	_, err := fmt.Fprintf(w, "<%s", ne.name)
-	if err != nil {
+	if _, err := io.WriteString(w, "<"); err != nil {
+		return fmt.Errorf("failed to render element name: %w", err)
+	}
+	if _, err := io.WriteString(w, ne.name); err != nil {
 		return fmt.Errorf("failed to render element name: %w", err)
 	}
 
 	for _, attr := range attrs {
 		// Add a space between each attribute.
-		_, err = fmt.Fprintf(w, " ")
-		if err != nil {
+		if _, err := io.WriteString(w, " "); err != nil {
 			return fmt.Errorf("failed to render space between attributes: %w", err)
 		}
 
-		err = attr.Render(w)
+		err := attr.Render(w)
 		if err != nil {
 			return fmt.Errorf("failed to render child attribute: %w", err)
 		}
 	}
 
-	_, err = fmt.Fprintf(w, ">")
-	if err != nil {
+	if _, err := io.WriteString(w, ">"); err != nil {
 		return fmt.Errorf("failed to render element end: %w", err)
 	}
 
 	if !ne.isVoid {
 		for _, el := range els {
-			err = el.Render(w)
+			err := el.Render(w)
 			if err != nil {
 				return fmt.Errorf("failed to render child element: %w", err)
 			}
 		}
 
-		_, err = fmt.Fprintf(w, "</%s>", ne.name)
-		if err != nil {
+		if _, err := io.WriteString(w, "</"); err != nil {
+			return fmt.Errorf("failed to render element end: %w", err)
+		}
+		if _, err := io.WriteString(w, ne.name); err != nil {
+			return fmt.Errorf("failed to render element end: %w", err)
+		}
+		if _, err := io.WriteString(w, ">"); err != nil {
 			return fmt.Errorf("failed to render element end: %w", err)
 		}
 	}
