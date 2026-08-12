@@ -27,9 +27,9 @@ func ExampleAcceptCharset() {
 }
 
 func ExampleAccesskey() {
-	node := nodx.Accesskey("value")
+	node := nodx.Accesskey("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: accesskey="value"
+	// Output: accesskey="value-a value-b value-c"
 }
 
 func ExampleAction() {
@@ -93,9 +93,9 @@ func ExampleAutocapitalize() {
 }
 
 func ExampleAutocomplete() {
-	node := nodx.Autocomplete("value")
+	node := nodx.Autocomplete("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: autocomplete="value"
+	// Output: autocomplete="value-a value-b value-c"
 }
 
 func ExampleAutocorrect() {
@@ -477,9 +477,9 @@ func ExampleFrameborder() {
 }
 
 func ExampleHeaders() {
-	node := nodx.Headers("value")
+	node := nodx.Headers("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: headers="value"
+	// Output: headers="value-a value-b value-c"
 }
 
 func ExampleHeight() {
@@ -585,9 +585,9 @@ func ExampleItemid() {
 }
 
 func ExampleItemprop() {
-	node := nodx.Itemprop("value")
+	node := nodx.Itemprop("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: itemprop="value"
+	// Output: itemprop="value-a value-b value-c"
 }
 
 func ExampleItemref() {
@@ -603,9 +603,9 @@ func ExampleItemscope() {
 }
 
 func ExampleItemtype() {
-	node := nodx.Itemtype("value")
+	node := nodx.Itemtype("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: itemtype="value"
+	// Output: itemtype="value-a value-b value-c"
 }
 
 func ExampleKeytype() {
@@ -1329,9 +1329,9 @@ func ExampleOptimum() {
 }
 
 func ExamplePart() {
-	node := nodx.Part("value")
+	node := nodx.Part("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: part="value"
+	// Output: part="value-a value-b value-c"
 }
 
 func ExamplePattern() {
@@ -1341,9 +1341,9 @@ func ExamplePattern() {
 }
 
 func ExamplePing() {
-	node := nodx.Ping("value")
+	node := nodx.Ping("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: ping="value"
+	// Output: ping="value-a value-b value-c"
 }
 
 func ExamplePlaceholder() {
@@ -1407,9 +1407,9 @@ func ExampleReferrerpolicy() {
 }
 
 func ExampleRel() {
-	node := nodx.Rel("value")
+	node := nodx.Rel("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: rel="value"
+	// Output: rel="value-a value-b value-c"
 }
 
 func ExampleRequired() {
@@ -1455,9 +1455,9 @@ func ExampleRules() {
 }
 
 func ExampleSandbox() {
-	node := nodx.Sandbox("value")
+	node := nodx.Sandbox("value-a value-b", "value-c")
 	fmt.Println(node)
-	// Output: sandbox="value"
+	// Output: sandbox="value-a value-b value-c"
 }
 
 func ExampleScope() {

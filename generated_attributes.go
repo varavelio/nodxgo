@@ -38,12 +38,12 @@ func AcceptCharset(value string) Node {
 // Accesskey specifies a shortcut key to activate/focus an element.
 //
 //	func ExampleAccesskey() {
-//		node := nodx.Accesskey("value")
+//		node := nodx.Accesskey("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: accesskey="value"
+//		// Output: accesskey="value-a value-b value-c"
 //	}
-func Accesskey(value string) Node {
-	return Attr("accesskey", value)
+func Accesskey(values ...string) Node {
+	return AttrList("accesskey", values...)
 }
 
 // Action specifies where to send the form-data when a form is submitted.
@@ -159,12 +159,12 @@ func Autocapitalize(value string) Node {
 // Autocomplete specifies whether an input field should have autocomplete enabled.
 //
 //	func ExampleAutocomplete() {
-//		node := nodx.Autocomplete("value")
+//		node := nodx.Autocomplete("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: autocomplete="value"
+//		// Output: autocomplete="value-a value-b value-c"
 //	}
-func Autocomplete(value string) Node {
-	return Attr("autocomplete", value)
+func Autocomplete(values ...string) Node {
+	return AttrList("autocomplete", values...)
 }
 
 // Autocorrect controls whether automatic spelling correction is enabled for a form field.
@@ -863,12 +863,12 @@ func Frameborder(value string) Node {
 // Headers specifies one or more header cells a cell is related to.
 //
 //	func ExampleHeaders() {
-//		node := nodx.Headers("value")
+//		node := nodx.Headers("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: headers="value"
+//		// Output: headers="value-a value-b value-c"
 //	}
-func Headers(value string) Node {
-	return Attr("headers", value)
+func Headers(values ...string) Node {
+	return AttrList("headers", values...)
 }
 
 // Height specifies the height of the element.
@@ -1061,12 +1061,12 @@ func Itemid(value string) Node {
 // Itemprop defines a property of an item.
 //
 //	func ExampleItemprop() {
-//		node := nodx.Itemprop("value")
+//		node := nodx.Itemprop("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: itemprop="value"
+//		// Output: itemprop="value-a value-b value-c"
 //	}
-func Itemprop(value string) Node {
-	return Attr("itemprop", value)
+func Itemprop(values ...string) Node {
+	return AttrList("itemprop", values...)
 }
 
 // Itemref references additional elements that provide properties for a microdata item.
@@ -1094,12 +1094,12 @@ func Itemscope(value bool) Node {
 // Itemtype specifies the vocabulary used by a microdata item.
 //
 //	func ExampleItemtype() {
-//		node := nodx.Itemtype("value")
+//		node := nodx.Itemtype("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: itemtype="value"
+//		// Output: itemtype="value-a value-b value-c"
 //	}
-func Itemtype(value string) Node {
-	return Attr("itemtype", value)
+func Itemtype(values ...string) Node {
+	return AttrList("itemtype", values...)
 }
 
 // Keytype specifies the security algorithm of a key.
@@ -2425,12 +2425,12 @@ func Optimum(value string) Node {
 // Part identifies the element as a part of a shadow DOM.
 //
 //	func ExamplePart() {
-//		node := nodx.Part("value")
+//		node := nodx.Part("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: part="value"
+//		// Output: part="value-a value-b value-c"
 //	}
-func Part(value string) Node {
-	return Attr("part", value)
+func Part(values ...string) Node {
+	return AttrList("part", values...)
 }
 
 // Pattern specifies a regular expression that the input element's value is checked against.
@@ -2447,12 +2447,12 @@ func Pattern(value string) Node {
 // Ping specifies a space-separated list of URLs to be notified if a user follows the hyperlink.
 //
 //	func ExamplePing() {
-//		node := nodx.Ping("value")
+//		node := nodx.Ping("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: ping="value"
+//		// Output: ping="value-a value-b value-c"
 //	}
-func Ping(value string) Node {
-	return Attr("ping", value)
+func Ping(values ...string) Node {
+	return AttrList("ping", values...)
 }
 
 // Placeholder specifies a short hint that describes the expected value of an input field.
@@ -2568,12 +2568,12 @@ func Referrerpolicy(value string) Node {
 // Rel specifies the relationship between the current document and the linked document.
 //
 //	func ExampleRel() {
-//		node := nodx.Rel("value")
+//		node := nodx.Rel("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: rel="value"
+//		// Output: rel="value-a value-b value-c"
 //	}
-func Rel(value string) Node {
-	return Attr("rel", value)
+func Rel(values ...string) Node {
+	return AttrList("rel", values...)
 }
 
 // Required specifies that the input field must be filled out before submitting the form.
@@ -2656,12 +2656,12 @@ func Rules(value string) Node {
 // Sandbox enables an extra set of restrictions for the content in an iframe.
 //
 //	func ExampleSandbox() {
-//		node := nodx.Sandbox("value")
+//		node := nodx.Sandbox("value-a value-b", "value-c")
 //		fmt.Println(node)
-//		// Output: sandbox="value"
+//		// Output: sandbox="value-a value-b value-c"
 //	}
-func Sandbox(value string) Node {
-	return Attr("sandbox", value)
+func Sandbox(values ...string) Node {
+	return AttrList("sandbox", values...)
 }
 
 // Scope specifies whether a header cell is a header for a column, row, or group of columns or rows.
