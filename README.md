@@ -217,7 +217,7 @@ clean.
 ```go
 func button(text string) nodx.Node {
   return nodx.Button(
-    nodx.Class("btn"),
+    nodx.Class("btn btn-sm", "btn-primary"),
     nodx.Text(text),
   )
 }
@@ -234,9 +234,9 @@ func main() {
   /*
     Output:
     <div>
-      <button class="btn">Click me 1!</button>
-      <button class="btn">Click me 2!</button>
-      <button class="btn">Click me 3!</button>
+      <button class="btn btn-sm btn-primary">Click me 1!</button>
+      <button class="btn btn-sm btn-primary">Click me 2!</button>
+      <button class="btn btn-sm btn-primary">Click me 3!</button>
     </div>
   */
 }
