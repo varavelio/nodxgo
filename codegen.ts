@@ -6,6 +6,18 @@ import {
 } from "./codegen_helpers.ts";
 import type { Attr, El } from "./codegen_helpers.ts";
 
+// Attributes whose values are space-separated lists of tokens.
+//
+// These are generated as variadic functions (e.g. Class("a", "b")) that join
+// their values with a single space, instead of taking a single pre-joined
+// string. Add an attribute name to this set to opt it into that behavior.
+//
+// Current list attributes:
+//   - class
+const listAttrs = new Set([
+  "class",
+]);
+
 const elements = await getElements();
 const attributes = await getAttributes();
 const keywords = await getKeywords();
@@ -181,6 +193,27 @@ function generateAttributes(els: El[], attrs: Attr[], keywords: string[]) {
       mainFile.push("");
     }
 
+    if (!funcName.isGlob && !attr.isBoolean && listAttrs.has(attr.name)) {
+      const example = [];
+      example.push(`func Example${funcName.name}() {`);
+      example.push(`\tnode := nodx.${funcName.name}("a", "b")`);
+      example.push(`\tfmt.Println(node)`);
+      example.push(`\t// Output: ${attr.name}="a b"`);
+      example.push(`}`);
+      testFile.push(example.join("\n"));
+      testFile.push(``);
+
+      const exampleComment = example.map((line) => `//\t${line}`).join("\n");
+
+      mainFile.push(`// ${funcName.name} ${attr.description}`);
+      mainFile.push(`//`);
+      mainFile.push(exampleComment);
+      mainFile.push(`func ${funcName.name}(values ...string) Node {`);
+      mainFile.push(`\treturn AttrList("${attr.name}", values...)`);
+      mainFile.push(`}`);
+      mainFile.push("");
+    }
+
     if (!funcName.isGlob && attr.isBoolean) {
       const example = [];
       example.push(`func Example${funcName.name}() {`);
@@ -202,7 +235,7 @@ function generateAttributes(els: El[], attrs: Attr[], keywords: string[]) {
       mainFile.push("");
     }
 
-    if (!funcName.isGlob && !attr.isBoolean) {
+    if (!funcName.isGlob && !attr.isBoolean && !listAttrs.has(attr.name)) {
       const example = [];
       example.push(`func Example${funcName.name}() {`);
       example.push(`\tnode := nodx.${funcName.name}("value")`);
