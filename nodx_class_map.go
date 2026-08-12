@@ -34,7 +34,7 @@ var _ Node = (*ClassMap)(nil)
 type ClassMap map[string]bool
 
 func (cm ClassMap) Render(w io.Writer) error {
-	classes := []string{}
+	classes := make([]string, 0, len(cm))
 
 	for class, condition := range cm {
 		if condition {
@@ -56,19 +56,13 @@ func (cm ClassMap) Render(w io.Writer) error {
 func (cm ClassMap) RenderString() (string, error) {
 	buf := &strings.Builder{}
 	err := cm.Render(buf)
-	if err != nil {
-		return "", err
-	}
-	return buf.String(), nil
+	return buf.String(), err
 }
 
 func (cm ClassMap) RenderBytes() ([]byte, error) {
 	buf := &bytes.Buffer{}
 	err := cm.Render(buf)
-	if err != nil {
-		return nil, err
-	}
-	return buf.Bytes(), nil
+	return buf.Bytes(), err
 }
 
 func (cm ClassMap) IsElement() bool {

@@ -150,4 +150,14 @@ func TestNodeGroup(t *testing.T) {
 		expected := `<div class="test1"><div class="test2"><span>Hello, </span><span>World!</span><span>NodX</span></div><span>Hello, World!</span></div>`
 		assert.Render(t, expected, node)
 	})
+
+	t.Run("Group is neither element nor attribute", func(t *testing.T) {
+		node := Group(Text("Hello"))
+		if node.IsElement() {
+			t.Error("group should not be an element")
+		}
+		if node.IsAttribute() {
+			t.Error("group should not be an attribute")
+		}
+	})
 }

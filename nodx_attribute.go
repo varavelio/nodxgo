@@ -64,19 +64,13 @@ func (na nodeAttribute) Render(w io.Writer) error {
 func (na nodeAttribute) RenderString() (string, error) {
 	buf := &strings.Builder{}
 	err := na.Render(buf)
-	if err != nil {
-		return "", err
-	}
-	return buf.String(), nil
+	return buf.String(), err
 }
 
 func (na nodeAttribute) RenderBytes() ([]byte, error) {
 	buf := &bytes.Buffer{}
 	err := na.Render(buf)
-	if err != nil {
-		return nil, err
-	}
-	return buf.Bytes(), nil
+	return buf.Bytes(), err
 }
 
 func (na nodeAttribute) IsElement() bool {

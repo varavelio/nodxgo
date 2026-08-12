@@ -28,7 +28,7 @@ var _ Node = (*StyleMap)(nil)
 type StyleMap map[string]bool
 
 func (sm StyleMap) Render(w io.Writer) error {
-	styles := []string{}
+	styles := make([]string, 0, len(sm))
 
 	for style, condition := range sm {
 		if condition {
@@ -50,19 +50,13 @@ func (sm StyleMap) Render(w io.Writer) error {
 func (sm StyleMap) RenderString() (string, error) {
 	buf := &strings.Builder{}
 	err := sm.Render(buf)
-	if err != nil {
-		return "", err
-	}
-	return buf.String(), nil
+	return buf.String(), err
 }
 
 func (sm StyleMap) RenderBytes() ([]byte, error) {
 	buf := &bytes.Buffer{}
 	err := sm.Render(buf)
-	if err != nil {
-		return nil, err
-	}
-	return buf.Bytes(), nil
+	return buf.Bytes(), err
 }
 
 func (sm StyleMap) IsElement() bool {

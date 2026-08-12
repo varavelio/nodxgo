@@ -2,36 +2,59 @@ package nodx
 
 import (
 	"errors"
+	"fmt"
 	"testing"
 )
 
-// failWriter fails on every write.
-type failWriter struct{}
+// countingWriter counts the writes it receives.
+type countingWriter struct{ writes int }
 
-func (failWriter) Write(p []byte) (int, error) {
-	return 0, errors.New("write failed")
+func (w *countingWriter) Write(p []byte) (int, error) {
+	w.writes++
+	return len(p), nil
+}
+
+// failAfterWriter succeeds for n writes, then fails on the next one.
+type failAfterWriter struct {
+	n      int
+	writes int
+}
+
+func (w *failAfterWriter) Write(p []byte) (int, error) {
+	if w.writes >= w.n {
+		return 0, errors.New("write failed")
+	}
+	w.writes++
+	return len(p), nil
 }
 
 func TestRenderErrors(t *testing.T) {
-	tests := []struct {
-		name string
-		node Node
-	}{
-		{"element", El("div", Id("main"), Text("hello"))},
-		{"element with children", El("div", El("span", Text("x")))},
-		{"void element", ElVoid("img", Href("x"))},
-		{"attribute with value", Attr("class", "a")},
-		{"attribute without value", Attr("disabled")},
-		{"text", Text("hello")},
-		{"group", Group(Text("a"), Text("b"))},
-		{"class map", ClassMap{"a": true}},
-		{"style map", StyleMap{"color: red": true}},
+	nodes := []Node{
+		El("div", Id("main"), Text("hello")),
+		El("div", El("span", Text("x"))),
+		ElVoid("img", Href("x")),
+		Attr("class", "a"),
+		Attr("disabled"),
+		Text("hello"),
+		Group(Text("a"), Text("b")),
+		ClassMap{"a": true},
+		StyleMap{"color: red": true},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if err := tt.node.Render(failWriter{}); err == nil {
-				t.Fatal("expected error, got nil")
+	for _, node := range nodes {
+		t.Run(fmt.Sprintf("%T", node), func(t *testing.T) {
+			// The writer never fails: count how many writes the node performs.
+			cw := &countingWriter{}
+			if err := node.Render(cw); err != nil {
+				t.Fatalf("unexpected error: %v", err)
+			}
+
+			// Failing at any single write must propagate an error.
+			for i := range cw.writes {
+				fw := &failAfterWriter{n: i}
+				if err := node.Render(fw); err == nil {
+					t.Errorf("expected error when write %d fails", i)
+				}
 			}
 		})
 	}
