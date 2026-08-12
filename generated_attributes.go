@@ -379,12 +379,12 @@ func CiteAttr(value string) Node {
 // Class specifies one or more class names for an element.
 //
 //	func ExampleClass() {
-//		node := nodx.Class("value")
+//		node := nodx.Class("a", "b")
 //		fmt.Println(node)
-//		// Output: class="value"
+//		// Output: class="a b"
 //	}
-func Class(value string) Node {
-	return Attr("class", value)
+func Class(values ...string) Node {
+	return AttrList("class", values...)
 }
 
 // Classid specifies the class id of an object (deprecated).
