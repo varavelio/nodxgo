@@ -296,12 +296,14 @@ NodX can be extended with additional libraries that provide ready-to-use
 components, attributes, and server utilities. Here are some projects built on
 top of NodX:
 
-- [**nodxgo-lucide**](https://github.com/varavelio/nodxgo-lucide) — Beautiful &
-  consistent icons for NodX Go.
 - [**nodxgo-alpine**](https://github.com/varavelio/nodxgo-alpine) — Alpine.js
   attributes for NodX Go.
 - [**nodxgo-htmx**](https://github.com/varavelio/nodxgo-htmx) — HTMX attributes
   and server utilities for NodX Go.
+- [**nodxgo-lucide**](https://github.com/varavelio/nodxgo-lucide) — Beautiful &
+  consistent icons for NodX Go provided by [Lucide](https://lucide.dev/).
+- [**nodxgo-simpleicons**](https://github.com/varavelio/nodxgo-simpleicons) —
+  The [Simple Icons](https://simpleicons.org/) brand icons set for NodX Go.
 
 > **Building your own NodX library?** We'd love to feature it here! Open a pull
 > request adding your project to this list, and help grow the NodX ecosystem
