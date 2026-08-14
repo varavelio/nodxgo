@@ -309,6 +309,30 @@ top of NodX:
 > request adding your project to this list, and help grow the NodX ecosystem
 > together.
 
+## Tailwind CSS
+
+If you use TailwindCSS, add this to your VS Code settings
+`.vscode/settings.json` so the IntelliSense picks up the classes inside
+`Class(...)` and `ClassMap{...}`:
+
+```json
+{
+  "tailwindCSS.includeLanguages": {
+    "go": "go"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "Class\\(([^)]*)\\)",
+      "[\"`]([^\"`]*)[\"`]"
+    ], // Class("...") or Class(`...`)
+    [
+      "ClassMap\\{([^)]*)\\}",
+      "[\"`]([^\"`]*)[\"`]"
+    ] // ClassMap{"..."} or ClassMap{`...`}
+  ]
+}
+```
+
 ## License
 
 NodX is open-source and available under the [MIT License](LICENSE). Feel free to
